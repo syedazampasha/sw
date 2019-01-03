@@ -1,0 +1,21 @@
+<div class="product-wrapper" fxlayout="column" fxLayoutGap="10px">
+  <mat-list fxFlex>
+    <mat-list-item *ngFor="let pro of product">
+
+      <img matListAvatar src={{pro.image}} alt={{pro.name}}>
+      <h1 matLine> {{pro.name}}</h1>
+      <p matLine>
+        <span>{{pro.description}}</span>
+      </p>
+      <!-- <div class="pro-id"></div>
+      <div class="pro-title"></div>
+      <div class="pro-image"></div>
+      <div class="pro-category"></div>
+      <div class="pro-featured"></div>
+      <div class="pro-label"></div>
+      <div class="pro-price"></div>
+      <div class="pro-description"></div> -->
+    </mat-list-item>
+  </mat-list>
+
+</div>
