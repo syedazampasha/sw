@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../shared/product';
-import { PRODUCTS } from '../shared/products';
+//import { PRODUCTS } from '../shared/products';
+import { ProductService } from './../services/product.service';
 
 @Component({
   selector: 'app-menu',
@@ -10,15 +11,19 @@ import { PRODUCTS } from '../shared/products';
 
 export class MenuComponent implements OnInit {
 
-  product: Product[] = PRODUCTS;
+  product: Product[];
 
   //selectedProduct: Product = PRODUCTS[0];
   selectedProduct: Product;
 
-  constructor() { }
+  constructor(private ProductService: ProductService) {
 
-  ngOnInit() { }
-  
+  }
+
+  ngOnInit() {
+    this.product = this.ProductService.getProducts();
+  }
+
   onSelect(product: Product) {
     this.selectedProduct = product;
   }

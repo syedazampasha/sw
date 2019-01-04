@@ -2,15 +2,15 @@
   fxLayoutGap="10px" fxLayoutGap.xs="0">
 
   <div fxFlex="60">
-    <mat-card *ngIf="Product">
+    <mat-card *ngIf="product">
       <mat-card-header>
         <mat-card-title>
-          <h3>{{ Product.name | uppercase}}</h3>
+          <h3>{{ product.name | uppercase}}</h3>
         </mat-card-title>
       </mat-card-header>
-      <img mat-card-image src="{{Product.image}}" alt="{{Product.name}}">
+      <img mat-card-image src="{{product.image}}" alt="{{product.name}}">
       <mat-card-content>
-        <p>sad : {{ Product.description }}
+        <p>sad : {{ product.description }}
         </p>
       </mat-card-content>
       <mat-card-actions>
@@ -22,9 +22,9 @@
 
 
   <div fxFlex="40">
-    <mat-list *ngIf="Product">
+    <mat-list *ngIf="product">
       <h3> Comments </h3>
-      <mat-list-item *ngFor="let comment of Product.comments">
+      <mat-list-item *ngFor="let comment of product.comments">
         <p>{{ comment.comment }}</p>
         <p>{{ comment.rating }} stars</p>
         <p>

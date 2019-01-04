@@ -1,3 +1,4 @@
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -15,10 +16,13 @@ import 'hammerjs';
 import { MenuComponent } from './menu/menu.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 
+import { ProductService } from './services/product.service';
+
+
 @NgModule({
   declarations: [
     AppComponent,
-    MenuComponent, 
+    MenuComponent,
     ProductDetailComponent
   ],
   imports: [
@@ -31,7 +35,9 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
     MatCardModule,
     MatButtonModule
   ],
-  providers: [],
+  providers: [
+    ProductService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
