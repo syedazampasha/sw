@@ -1,14 +1,7 @@
-<!-- <div fxFlex>
-    <div>
-      <h3>Menu</h3>
-      <hr>
-    </div>
-  </div> -->
-
 <div class="product-container" fxlayout="column" fxLayoutGap="0px">
   <div fxFlex>
     <mat-grid-list cols="2">
-      <mat-grid-tile *ngFor="let pro of product">
+      <mat-grid-tile *ngFor="let pro of product" (click)="onSelect(pro)">
         <img height="200px" src={{pro.image}} alt={{pro.name}}>
         <mat-grid-tile-footer>
           <h1> {{pro.name | uppercase}}</h1>
@@ -26,7 +19,35 @@
       <img mat-card-image src={{selectedProduct.image}}>
 
       <mat-card-content>
-        <p>{{ selectedProduct.description }}</p>
+        <p>
+          <strong>descr :</strong> {{ selectedProduct.description }}</p>
+        <hr>
+        <p>
+          <strong>label :</strong> {{ selectedProduct.label }}</p>
+        <hr>
+        <p>
+          <strong>price :</strong> {{ selectedProduct.price }}</p>
+        <hr>
+        <br>
+        <br>
+
+        <div *ngFor="let comment of selectedProduct.comments">
+          <span>
+            <strong>ratings :</strong> {{ comment.rating }}</span>
+          <br>
+          <span>
+            <strong>comments :</strong> {{ comment.comment }}</span>
+
+          <br>
+          <span>
+            <strong>author :</strong> {{ comment.author }}</span>
+          <br>
+          <span>
+            <strong>date :</strong> {{ comment.date }}</span>
+          <hr>
+          <br>
+        </div>
+
       </mat-card-content>
 
       <mat-card-actions>
@@ -39,4 +60,4 @@
 
 </div>
 
-<app-product-detail></app-product-detail>
+<app-product-detail [product]="selectedProduct"></app-product-detail>
