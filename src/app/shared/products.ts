@@ -1,7 +1,6 @@
 import { Product } from './product';
 
-export const PRODUCTS: Product[] =
-    [
+export const PRODUCTS: Product[] = [
         {
             id: '0',
             name: 'shirt',
@@ -11,7 +10,7 @@ export const PRODUCTS: Product[] =
             label: 'mens',
             price: 'Rs. 600',
             // tslint:disable-next-line:max-line-length
-            description: 'A unique combination of Indian Uthappam (pancake) and Italian pizza, topped with Cerignola olives, ripe vine cherry tomatoes, Vidalia onion, Guntur chillies and Buffalo Paneer.',
+            description: '123 A unique combination of Indian Uthappam (pancake) and Italian pizza, topped with Cerignola olives, ripe vine cherry tomatoes, Vidalia onion, Guntur chillies and Buffalo Paneer.',
             comments: [
                 {
                     rating: 5,
@@ -90,7 +89,7 @@ export const PRODUCTS: Product[] =
         }
         ,
         {
-            id: '1',
+            id: '2',
             name: 'shirt',
             image: '/assets/images/products/callout-03.jpg',
             category: 'mains',
@@ -133,7 +132,7 @@ export const PRODUCTS: Product[] =
             ]
         },
         {
-            id: '1',
+            id: '3',
             name: 'shirt',
             image: '/assets/images/products/callout-04.jpg',
             category: 'mains',
