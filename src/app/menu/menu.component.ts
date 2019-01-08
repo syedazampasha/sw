@@ -21,7 +21,10 @@ export class MenuComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.product = this.ProductService.getProducts();
+    this.ProductService.getProducts()
+      .then(
+        (products) => this.product = products
+      );
   }
 
   onSelect(product: Product) {

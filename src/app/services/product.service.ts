@@ -8,13 +8,16 @@ import { PRODUCTS } from './../shared/products';
 
 export class ProductService {
   constructor() { }
-  getProducts(): Product[] {
-    return PRODUCTS;
+
+  getProducts(): Promise<Product[]> {
+    return Promise.resolve(PRODUCTS);
   }
-  getProduct(id: string): Product {
-    return PRODUCTS.filter((product) => (product.id === id))[0];
+
+  getProduct(id: string): Promise<Product> {
+    return Promise.resolve(PRODUCTS.filter((product) => (product.id === id))[0]);
   }
-  getFeaturedProduct(): Product {
-    return PRODUCTS.filter((product) => product.featured)[0];
+
+  getFeaturedProduct(): Promise<Product> {
+    return Promise.resolve(PRODUCTS.filter((product) => product.featured)[0]);
   }
 }
