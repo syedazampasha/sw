@@ -8,6 +8,7 @@ export class Product {
     tag: string;
     qty: string;
     price: string;
+    size:string;
     image: string;
     outofstock: string;
     note: string;
