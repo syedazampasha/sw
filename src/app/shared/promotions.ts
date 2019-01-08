@@ -4,11 +4,11 @@ export const PROMOTIONS: Promotion[] = [
     {
         id: '0',
         name: 'Weekend Grand Buffet',
-        image: '/assets/images/products/callout-02.jpg',
+        image: '/assets/images/products/jeans/J-01.jpg',
         label: 'New',
         price: '19.99',
         featured: true,
-        // tslint:disable-next-line:max-line-length
+        tag: 'asdad',
         description: 'Featuring mouthwatering combinations with a choice of five different salads, six enticing appetizers, six main entrees and five choicest desserts. Free flowing bubbly and soft drinks. All for just $19.99 per person'
     }
 ];

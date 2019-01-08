@@ -1,4 +1,3 @@
-
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -26,6 +25,7 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
 /* Services Imports Starts */
 import { ProductService } from './services/product.service';
 import { PromotionService } from './services/promotion.service';
+import { LeadersService } from './services/leaders.service';
 /* Services Imports Ends */
 
 @NgModule({
@@ -52,7 +52,8 @@ import { PromotionService } from './services/promotion.service';
   ],
   providers: [
     ProductService,
-    PromotionService
+    PromotionService,
+    LeadersService
   ],
   bootstrap: [AppComponent]
 })
