@@ -7,6 +7,8 @@ import { MatListModule } from '@angular/material/list';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
+
 
 import 'hammerjs';
 /* App Specific Component Starts */
@@ -19,6 +21,7 @@ import { ContactComponent } from './contact/contact.component';
 import { MenuComponent } from './menu/menu.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
+import { LoginComponent } from './login/login.component';
 
 /* App Specific Component Ends */
 
@@ -26,6 +29,8 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
 import { ProductService } from './services/product.service';
 import { PromotionService } from './services/promotion.service';
 import { LeadersService } from './services/leaders.service';
+
+
 /* Services Imports Ends */
 
 @NgModule({
@@ -37,7 +42,8 @@ import { LeadersService } from './services/leaders.service';
     FooterComponent,
     HomeComponent,
     AboutComponent,
-    ContactComponent
+    ContactComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -48,12 +54,16 @@ import { LeadersService } from './services/leaders.service';
     MatGridListModule,
     MatCardModule,
     MatButtonModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatDialogModule
   ],
   providers: [
     ProductService,
     PromotionService,
     LeadersService
+  ],
+  entryComponents: [
+    LoginComponent
   ],
   bootstrap: [AppComponent]
 })
