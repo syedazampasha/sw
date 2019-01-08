@@ -1,5 +1,5 @@
 <div class="product-container" fxlayout="column" fxLayoutGap="0px">
-  <div fxFlex>
+  <div fxFlex *ngIf="product">
     <mat-grid-list cols="2">
       <!-- <mat-grid-tile *ngFor="let pro of product" (click)="onSelect(pro)"> -->
       <mat-grid-tile *ngFor="let pro of product" [routerLink]="['/productdetail/', pro.id]">
@@ -10,6 +10,11 @@
         </mat-grid-tile-footer>
       </mat-grid-tile>
     </mat-grid-list>
+  </div>
+
+  <div [hidden]="product">
+    <mat-spinner></mat-spinner>
+    <h4>Loading.. Pl. wait!</h4>
   </div>
 
   <div fxFlex *ngIf="selectedProduct">
@@ -61,5 +66,3 @@
   </div>
 
 </div>
-
-<!-- <app-product-detail [product]="selectedProduct"></app-product-detail> -->

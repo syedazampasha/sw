@@ -30,7 +30,7 @@ export class ProductDetailComponent implements OnInit {
   ngOnInit() { // productdetail/1 or /2 etc
     let id = this.route.snapshot.params['id'];
     this.productService.getProduct(id)
-      .then((product) => this.product = product);
+      .subscribe((product) => this.product = product);
   }
 
   goBack(): void {

@@ -22,7 +22,7 @@ export class MenuComponent implements OnInit {
 
   ngOnInit() {
     this.ProductService.getProducts()
-      .then(
+      .subscribe(
         (products) => this.product = products
       );
   }
