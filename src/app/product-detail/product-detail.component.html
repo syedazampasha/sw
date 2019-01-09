@@ -1,8 +1,8 @@
 <div class="container" fxLayout="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutAlign.gt-md="space-around center"
   fxLayoutGap="10px" fxLayoutGap.xs="0">
 
-  <div fxFlex="60">
-    <mat-card *ngIf="product">
+  <div fxFlex="60" *ngIf="product">
+    <mat-card>
       <mat-card-header>
         <mat-card-title>
           <h3>{{ product.name | uppercase}}</h3>
@@ -14,16 +14,27 @@
         </p>
       </mat-card-content>
       <mat-card-actions>
+
+        <button mat-button [routerLink]="['/productdetail', prev]">
+          <span class="fa fa-chevron-left fa-lg"></span>
+        </button>
+
         <button mat-button (click)="goBack()">Back</button>
         <button mat-button>LIKE</button>
         <button mat-button>SHARE</button>
+
+
+        <span class="flex-spacer"></span>
+        <button mat-button [routerLink]="['/productdetail', next]">
+          <span class="fa fa-chevron-right fa-lg"></span>
+        </button>
       </mat-card-actions>
     </mat-card>
   </div>
 
 
-  <div fxFlex="40">
-    <mat-list *ngIf="product">
+  <div fxFlex="40" *ngIf="product">
+    <mat-list>
       <h3> Comments </h3>
       <mat-list-item *ngFor="let comment of product.comments">
         <p>{{ comment.comment }}</p>
@@ -36,6 +47,7 @@
     </mat-list>
 
   </div>
+
 
   <div [hidden]="product">
     <mat-spinner></mat-spinner>
