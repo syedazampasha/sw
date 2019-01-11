@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { Product } from '../shared/product';
-//import { PRODUCTS } from '../shared/products';
+import { PRODUCTS } from '../shared/products';
 import { ProductService } from './../services/product.service';
 
 @Component({
@@ -11,24 +11,21 @@ import { ProductService } from './../services/product.service';
 
 export class MenuComponent implements OnInit {
 
-  product: Product[];
+  products: Product[];
+  errMess: string;
 
-  //selectedProduct: Product = PRODUCTS[0];
-  selectedProduct: Product;
-
-  constructor(private ProductService: ProductService) {
-
-  }
+  constructor(
+    private ProductService: ProductService,
+    @Inject('BaseURL') private BaseURL
+  ) { }
 
   ngOnInit() {
     this.ProductService.getProducts()
       .subscribe(
-        (products) => this.product = products
-      );
+        (products) => this.products = products,
+        errMess => this.errMess = <any>errMess);
   }
-
-  onSelect(product: Product) {
+  /* onSelect(product: Product) {
     this.selectedProduct = product;
-  }
-
+  } */
 }

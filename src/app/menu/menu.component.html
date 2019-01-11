@@ -1,10 +1,9 @@
 <div class="product-container" fxlayout="column" fxLayoutGap="0px">
-  <div fxFlex *ngIf="product">
+  <div fxFlex *ngIf="products">
     <mat-grid-list cols="2">
-      <!-- <mat-grid-tile *ngFor="let pro of product" (click)="onSelect(pro)"> -->
-      <mat-grid-tile *ngFor="let pro of product" [routerLink]="['/productdetail/', pro.id]">
+      <mat-grid-tile *ngFor="let pro of products" [routerLink]="['/productdetail/', pro.id]">
         <span>{{ pro.id }}</span>
-        <img height="200px" src={{pro.image}} alt={{pro.name}}>
+        <img height="200px" src="{{BaseURL + pro.image}}" alt={{pro.name}}>
         <mat-grid-tile-footer>
           <h1> {{pro.name | uppercase}}</h1>
         </mat-grid-tile-footer>
@@ -12,9 +11,13 @@
     </mat-grid-list>
   </div>
 
-  <div [hidden]="product">
+  <div [hidden]="products || errMess">
     <mat-spinner></mat-spinner>
     <h4>Loading.. Pl. wait!</h4>
+  </div>
+  <div fxFlex *ngIf="errMess">
+    <h2>Error</h2>
+    <h4>{{errMess}}</h4>
   </div>
 
   <div fxFlex *ngIf="selectedProduct">
@@ -23,7 +26,7 @@
         <h3>{{ selectedProduct.name | uppercase }}</h3>
       </mat-card-header>
 
-      <img mat-card-image src={{selectedProduct.image}}>
+      <img mat-card-image src="{{BaseURL + selectedProduct.image}}">
 
       <mat-card-content>
         <p>

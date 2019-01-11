@@ -1,31 +1,50 @@
 import { Injectable } from '@angular/core';
 import { Product } from './../shared/product';
-import { PRODUCTS } from './../shared/products';
+//import { PRODUCTS } from './../shared/products';
 import { Observable, of } from 'rxjs';
-import { delay } from 'rxjs/operators';
 
-@Injectable({
-  providedIn: 'root'
-})
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { baseURL } from '../shared/baseurl';
+import { delay, map, catchError } from 'rxjs/operators';
+import { ProcessHTTPMsgService } from './process-httpmsg.service';
+
+@Injectable({ providedIn: 'root' })
 
 export class ProductService {
-  constructor() { }
+
+  constructor(
+    private http: HttpClient,
+    private processHTTPMsgService: ProcessHTTPMsgService) { }
 
   getProducts(): Observable<Product[]> {
-    return of(PRODUCTS).pipe(delay(500));
-    /* return new Promise(resolve => {
-      setTimeout(() => resolve(PRODUCTS), 500)
-    }); */
+    return this.http.get<Product[]>(baseURL + 'products')
+      .pipe(catchError(this.processHTTPMsgService.handleError));
   }
 
   getProduct(id: string): Observable<Product> {
-    return of(PRODUCTS.filter((product) => (product.id === id))[0]).pipe(delay(500));
+    return this.http.get<Product>(baseURL + 'products/' + id)
+      .pipe(catchError(this.processHTTPMsgService.handleError));
   }
 
   getFeaturedProduct(): Observable<Product> {
-    return of(PRODUCTS.filter((product) => product.featured)[0]).pipe(delay(500));
+    return this.http.get<Product[]>(baseURL + 'products?featured=true')
+      .pipe(map(products => products[0]))
+      .pipe(catchError(this.processHTTPMsgService.handleError));
   }
+
   getProductIds(): Observable<string[] | any> {
-    return of(PRODUCTS.map(product => product.id));
+    return this.getProducts().pipe(map(products => products.map(product => product.id)))
+      .pipe(catchError(error => error));
+  }
+
+  putProduct(product: Product): Observable<Product> {
+    console.log(product);
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    };
+    return this.http.put<Product>(baseURL + 'products/' + product.id, product, httpOptions)
+      .pipe(catchError(this.processHTTPMsgService.handleError));
   }
 }

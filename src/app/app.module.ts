@@ -16,6 +16,15 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatSliderModule } from '@angular/material/slider';
+
+import { HttpClientModule } from '@angular/common/http';
+
+import { HttpModule } from '@angular/http';
+
+import { baseURL } from './shared/baseurl';
+
+import { ProcessHTTPMsgService } from './services/process-httpmsg.service';
 
 
 import 'hammerjs';
@@ -36,6 +45,8 @@ import { LoginComponent } from './login/login.component';
 import { ProductService } from './services/product.service';
 import { PromotionService } from './services/promotion.service';
 import { LeadersService } from './services/leaders.service';
+import { HighlightDirective } from './directives/highlight.directive';
+
 
 
 
@@ -51,7 +62,8 @@ import { LeadersService } from './services/leaders.service';
     HomeComponent,
     AboutComponent,
     ContactComponent,
-    LoginComponent
+    LoginComponent,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,
@@ -71,12 +83,18 @@ import { LeadersService } from './services/leaders.service';
     ReactiveFormsModule,
     MatSelectModule,
     MatSlideToggleModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatSliderModule,
+    HttpClientModule,
+    HttpModule
+
   ],
   providers: [
     ProductService,
     PromotionService,
-    LeadersService
+    LeadersService,
+    ProcessHTTPMsgService,
+    { provide: 'BaseURL', useValue: baseURL}
   ],
   entryComponents: [
     LoginComponent

@@ -2,7 +2,7 @@ import { Leader } from './leader';
 
 export const LEADERS: Leader[] =
     [
-        {
+        /* {
             id: '0',
             name: 'Peter Pan',
             image: '/assets/images/leaders/leader-01.png',
@@ -34,12 +34,12 @@ export const LEADERS: Leader[] =
         },
         {
             id: '3',
-            name: 'Alberto Somayya',
+            name: 'Alberto Somayya 12345',
             image: '/assets/images/leaders/leader-01.png',
             designation: 'Executive Chef',
             abbr: 'EC',
             featured: true,
             // tslint:disable-next-line:max-line-length
             description: 'Award winning three-star Michelin chef with wide International experience having worked closely with whos-who in the culinary world, he specializes in creating mouthwatering Indo-Italian fusion experiences. He says, Put together the cuisines from the two craziest cultures, and you get a winning hit! Amma Mia!'
-        }
+        } */
     ];

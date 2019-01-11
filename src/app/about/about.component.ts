@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 
-import { LeadersService } from './../services/leaders.service';
 import { Leader } from './../shared/leader';
+import { LeadersService } from './../services/leaders.service';
+
+//import { baseURL } from './../shared/baseurl';
 
 
 @Component({
@@ -14,11 +16,11 @@ export class AboutComponent implements OnInit {
   leaders: Leader[];
 
   constructor(
-    private leaderService: LeadersService
+    private leaderService: LeadersService,
+    @Inject('BaseURL') private BaseURL
   ) { }
 
   ngOnInit() {
-    this.leaderService.getLeaders()
-      .subscribe((leaders) => this.leaders = leaders);
+    this.leaderService.getLeaders().subscribe((leaders) => this.leaders = leaders);
   }
 }

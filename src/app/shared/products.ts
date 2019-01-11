@@ -1,7 +1,7 @@
 import { Product } from './product';
 
 export const PRODUCTS: Product[] = [
-    {
+    /* {
         id: '0',
         featured: true,
         name: 'shirt',
@@ -72,5 +72,5 @@ export const PRODUCTS: Product[] = [
                 date: '2012-10-16T17:57:28.556094Z'
             }
         ]
-    }
+    } */
 ]
