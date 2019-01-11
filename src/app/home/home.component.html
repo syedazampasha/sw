@@ -1,4 +1,135 @@
-<div class="container" fxLayout="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutAlign.gt-md="space-around center"
+<!-- Carousil Starts -->
+<mdb-carousel class="carousel slide carousel-fade sw-home-carousel" [animation]="'fade'">
+  <mdb-carousel-item>
+    <div class="view w-100">
+      <img class="d-block w-100" src="assets/images/banner/banner-01.jpg" alt="Third slide">
+      <div class="mask rgba-black-slight waves-light" mdbWavesEffect></div>
+    </div>
+    <div class="carousel-caption">
+      <h3 class="h3-responsive">Slight mask</h3>
+      <p>Third text</p>
+    </div>
+  </mdb-carousel-item>
+  <mdb-carousel-item>
+    <div class="view w-100">
+      <img class="d-block w-100" src="assets/images/banner/banner-05.jpg" alt="Third slide">
+      <div class="mask rgba-black-slight waves-light" mdbWavesEffect></div>
+    </div>
+    <div class="carousel-caption">
+      <h3 class="h3-responsive">Slight mask</h3>
+      <p>Third text</p>
+    </div>
+  </mdb-carousel-item>
+  <mdb-carousel-item>
+    <div class="view w-100">
+      <img class="d-block w-100" src="assets/images/banner/banner-06.jpg" alt="Third slide">
+      <div class="mask rgba-black-slight waves-light" mdbWavesEffect></div>
+    </div>
+    <div class="carousel-caption">
+      <h3 class="h3-responsive">Slight mask</h3>
+      <p>Third text</p>
+    </div>
+  </mdb-carousel-item>
+</mdb-carousel>
+
+<!-- Carousil Ends -->
+
+<!-- Feature Products Starts -->
+<!--Section: Products v.4-->
+<section class="pb-3 text-center ">
+
+  <!--Section heading-->
+  <h2 class="h1 py-5">Our bestsellers</h2>
+  <!--Section description-->
+  <p class="grey-text mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error amet numquam
+    iure
+    provident voluptate esse quasi,
+    veritatis totam voluptas nostrum quisquam eum porro a pariatur accusamus veniam.</p>
+
+  <!--Grid row-->
+  <div class="row">
+
+    <!--Grid column-->
+    <div class="col-lg-4 col-md-6 mb-4">
+
+      <!--Collection card-->
+      <mdb-card class="collection-card z-depth-1-half">
+        <!--Card image-->
+        <div class="view zoom waves-light" mdbWavesEffect>
+          <mdb-card-img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/5.jpg" alt=""></mdb-card-img>
+          <div class="stripe dark">
+            <a>
+              <p>Red trousers
+                <i class="fa fa-angle-right"></i>
+              </p>
+            </a>
+          </div>
+        </div>
+        <!--Card image-->
+      </mdb-card>
+      <!--Collection card-->
+
+    </div>
+    <!--Grid column-->
+
+    <!--Grid column-->
+    <div class="col-lg-4 col-md-6 mb-4">
+
+      <!--Collection card-->
+      <mdb-card class="collection-card z-depth-1-half">
+        <!--Card image-->
+        <div class="view zoom waves-light" mdbWavesEffect>
+          <mdb-card-img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/8.jpg" alt=""></mdb-card-img>
+          <div class="stripe light">
+            <a>
+              <p>Sweatshirt
+                <i class="fa fa-angle-right"></i>
+              </p>
+            </a>
+          </div>
+        </div>
+        <!--Card image-->
+      </mdb-card>
+      <!--Collection card-->
+
+    </div>
+    <!--Grid column-->
+
+    <!--Grid column-->
+    <div class="col-lg-4 col-md-6 mb-4">
+
+      <!--Collection card-->
+      <mdb-card class="collection-card z-depth-1-half">
+        <!--Card image-->
+        <div class="view zoom waves-light" mdbWavesEffect>
+          <mdb-card-img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/9.jpg" alt=""></mdb-card-img>
+          <div class="stripe dark">
+            <a>
+              <p>Accessories
+                <i class="fa fa-angle-right"></i>
+              </p>
+            </a>
+          </div>
+        </div>
+        <!--Card image-->
+      </mdb-card>
+      <!--Collection card-->
+
+    </div>
+    <!--Grid column-->
+
+
+
+  </div>
+  <!--Grid row-->
+
+</section>
+<!--Section: Products v.4-->
+<!-- Feature Products Ends -->
+
+
+
+<div class="" fxLayout="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutAlign.gt-md="space-around center"
   fxLayoutGap="10px">
 
   <mat-card *ngIf="product" fxFlex>

@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
@@ -48,6 +48,9 @@ import { LeadersService } from './services/leaders.service';
 import { HighlightDirective } from './directives/highlight.directive';
 
 
+/** MDB Starts */
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
+/** MDB Ends */
 
 
 /* Services Imports Ends */
@@ -86,19 +89,20 @@ import { HighlightDirective } from './directives/highlight.directive';
     MatProgressSpinnerModule,
     MatSliderModule,
     HttpClientModule,
-    HttpModule
-
+    HttpModule,
+    MDBBootstrapModule.forRoot()
   ],
   providers: [
     ProductService,
     PromotionService,
     LeadersService,
     ProcessHTTPMsgService,
-    { provide: 'BaseURL', useValue: baseURL}
+    { provide: 'BaseURL', useValue: baseURL }
   ],
   entryComponents: [
     LoginComponent
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [NO_ERRORS_SCHEMA]
 })
 export class AppModule { }

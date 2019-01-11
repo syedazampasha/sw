@@ -14,7 +14,22 @@ $background-pale: #D1C4E9;
     min-height: 150px;
 }
 
-.active {
-    background: #f00;
-    color: floralwhite;
+.header-nav {
+    ul {
+        li {
+            padding: 0 20px;
+            border-right: 1px dotted #ccc;
+            &:last-child {
+                border-right: 1px dotted transparent;
+            }
+            a {
+                color: #000;
+                font-size: 14px;
+                text-transform: uppercase;
+                &.active {
+                    color: #f00;
+                }
+            }
+        }
+    }
 }
