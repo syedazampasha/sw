@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Leader } from './../shared/leader';
-import { LEADERS } from './../shared/leaders';
+//import { LEADERS } from './../shared/leaders';
 //import { Promotion } from '../shared/promotion';
 import { Observable, of } from 'rxjs';
 import { baseURL } from './../shared/baseurl';

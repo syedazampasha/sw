@@ -33,7 +33,8 @@ export class ProductService {
   }
 
   getProductIds(): Observable<string[] | any> {
-    return this.getProducts().pipe(map(products => products.map(product => product.id)))
+    return this.getProducts()
+      .pipe(map(products => products.map(product => product.id)))
       .pipe(catchError(error => error));
   }
 

@@ -1,0 +1,33 @@
+1. create a banner.ts in shared folder and export class 
+   ex : 
+export class Banner{
+    id: string;
+    name: string;
+    image: string;
+    label: string;
+    price: string;
+    featured: boolean;
+    description: string;
+    tag:string;
+}
+
+2. create a service inside service folder banner.service.ts 
+  and include banner.ts file 
+  ** All the logical code will be in service file 
+
+
+3. create banner component 
+   include banner from shared folder 
+   include banner service from services folder 
+	banner: Banner;
+
+	constructor(
+    private bannerService: BannerService
+    @Inject('BaseURL') private BaseURL
+  ) { }
+
+  ngOnInit() {
+    this.bannerService.getFeaturedBanner().subscribe((banner) => this.banner = banner);
+  }
+
+

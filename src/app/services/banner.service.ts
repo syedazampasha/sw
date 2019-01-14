@@ -5,48 +5,46 @@ import { baseURL } from '../shared/baseurl';
 import { delay, map, catchError } from 'rxjs/operators';
 import { ProcessHTTPMsgService } from './process-httpmsg.service';
 
-import { Promotion } from './../shared/promotion';
+import { Banner } from './../shared/banner';
 
 @Injectable({ providedIn: 'root' })
 
-export class PromotionService {
+export class BannerService {
 
   constructor(
     private http: HttpClient,
     private processHTTPMsgService: ProcessHTTPMsgService
   ) { }
 
-  getPromotions(): Observable<Promotion[]> {
-    return this.http.get<Promotion[]>(baseURL + 'Promotions')
+  getBanners(): Observable<Banner[]> {
+    return this.http.get<Banner[]>(baseURL + 'banners')
       .pipe(catchError(this.processHTTPMsgService.handleError));
   }
 
-  getPromotion(id: string): Observable<Promotion> {
-    return this.http.get<Promotion>(baseURL + 'Promotions/' + id)
+  getBanner(id: string): Observable<Banner> {
+    return this.http.get<Banner>(baseURL + 'banners/' + id)
       .pipe(catchError(this.processHTTPMsgService.handleError));
   }
 
-  getFeaturedPromotion(): Observable<Promotion> {
-    return this.http.get<Promotion[]>(baseURL + 'Promotions?featured=true')
-      .pipe(map(promotion => promotion[0]))
+  getFeaturedBanner(): Observable<Banner> {
+    return this.http.get<Banner[]>(baseURL + 'banners?featured=true')
+      .pipe(map(banners => banners[0]))
       .pipe(catchError(this.processHTTPMsgService.handleError));
-    //return of(PROMOTIONS.filter((promotion) => promotion.featured)[0]).pipe(delay(500));
   }
 
-  getPromotionIds(): Observable<string | any> {
-    return this.getPromotions()
-      .pipe(map(promotions => promotions.map(promotion => promotion.id)))
+  getBannerIds(): Observable<string[] | any> {
+    return this.getBanners()
+      .pipe(map(banners => banners.map(banner => banner.id)))
       .pipe(catchError(error => error));
   }
-
-  putPromotion(promotion: Promotion): Observable<Promotion> {
+  putBanner(banner: Banner): Observable<Banner> {
+    console.log(banner);
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json'
       })
     };
-    return this.http.put<Promotion>(baseURL + 'Promotions/' + promotion.id, promotion, httpOptions)
+    return this.http.put<Banner>(baseURL + 'banners/' + banner.id, banner, httpOptions)
       .pipe(catchError(this.processHTTPMsgService.handleError));
   }
-
 }

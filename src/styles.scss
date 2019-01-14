@@ -3,6 +3,7 @@
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
 @import 'variables';
 @import '../node_modules/font-awesome/scss/font-awesome';
+$img-global: "assets/images/global";
 *,
 html,
 body {
@@ -58,4 +59,13 @@ $divider-color: #BDBDBD;
     border: 1px solid $primary-color-dark;
     z-index: 1;
     transform: scale(1.01);
+}
+
+.xt-title-bg {
+    height: 20px;
+    background-repeat: no-repeat;
+    display: block;
+    background-position: center;
+    background-image: url("#{$img-global}/sw-title-bg.png");
+    margin-bottom: 20px;
 }

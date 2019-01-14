@@ -1,134 +1,78 @@
+<!-- <div fxFlex *ngIf="banner"> -->
 <!-- Carousil Starts -->
 <mdb-carousel class="carousel slide carousel-fade sw-home-carousel" [animation]="'fade'">
-  <mdb-carousel-item>
+  <mdb-carousel-item *ngFor="let banner of banner">
+    <!--  {{ banner | json}} -->
     <div class="view w-100">
-      <img class="d-block w-100" src="assets/images/banner/banner-01.jpg" alt="Third slide">
+      <img class="d-block w-100" src="{{BaseURL + banner.image}}" alt="Third slide">
       <div class="mask rgba-black-slight waves-light" mdbWavesEffect></div>
     </div>
     <div class="carousel-caption">
-      <h3 class="h3-responsive">Slight mask</h3>
-      <p>Third text</p>
-    </div>
-  </mdb-carousel-item>
-  <mdb-carousel-item>
-    <div class="view w-100">
-      <img class="d-block w-100" src="assets/images/banner/banner-05.jpg" alt="Third slide">
-      <div class="mask rgba-black-slight waves-light" mdbWavesEffect></div>
-    </div>
-    <div class="carousel-caption">
-      <h3 class="h3-responsive">Slight mask</h3>
-      <p>Third text</p>
-    </div>
-  </mdb-carousel-item>
-  <mdb-carousel-item>
-    <div class="view w-100">
-      <img class="d-block w-100" src="assets/images/banner/banner-06.jpg" alt="Third slide">
-      <div class="mask rgba-black-slight waves-light" mdbWavesEffect></div>
-    </div>
-    <div class="carousel-caption">
-      <h3 class="h3-responsive">Slight mask</h3>
-      <p>Third text</p>
+      <h3 class="h3-responsive">{{ banner.name }}</h3>
+      <p> {{ banner.description}}</p>
     </div>
   </mdb-carousel-item>
 </mdb-carousel>
-
 <!-- Carousil Ends -->
+<!-- </div> -->
+<!-- 
+<div [hidden]="banner || errMess">
+  <mat-spinner></mat-spinner>
+  <h4>Loading.. Pl. wait !</h4>
+</div>
+<div fxFlex *ngIf="errMess">
+  <h2>Error</h2>
+  <h4>{{errMess}}</h4>
+</div> -->
 
-<!-- Feature Products Starts -->
-<!--Section: Products v.4-->
-<section class="pb-3 text-center ">
 
+<!--PROMOTIONS STARTS -->
+<section class="pb-3 text-center" *ngIf="promotionLoop">
   <!--Section heading-->
-  <h2 class="h1 py-5">Our bestsellers</h2>
+  <h2 class="h1 py-5 pb-3">~~~ PROMOTIONS ~~~</h2>
+  <!-- <span class="xt-title-bg"></span> -->
   <!--Section description-->
-  <p class="grey-text mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error amet numquam
+  <!--  <p class="grey-text mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error amet numquam
     iure
     provident voluptate esse quasi,
-    veritatis totam voluptas nostrum quisquam eum porro a pariatur accusamus veniam.</p>
+    veritatis totam voluptas nostrum quisquam eum porro a pariatur accusamus veniam.</p> -->
 
-  <!--Grid row-->
-  <div class="row">
-
-    <!--Grid column-->
-    <div class="col-lg-4 col-md-6 mb-4">
-
+  <div class="row promotion-container">
+    <div class="col-lg-4 col-md-6 mb-4" *ngFor="let pro of promotionLoop">
       <!--Collection card-->
+
       <mdb-card class="collection-card z-depth-1-half">
-        <!--Card image-->
         <div class="view zoom waves-light" mdbWavesEffect>
-          <mdb-card-img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/5.jpg" alt=""></mdb-card-img>
-          <div class="stripe dark">
-            <a>
-              <p>Red trousers
-                <i class="fa fa-angle-right"></i>
-              </p>
-            </a>
-          </div>
-        </div>
-        <!--Card image-->
-      </mdb-card>
-      <!--Collection card-->
-
-    </div>
-    <!--Grid column-->
-
-    <!--Grid column-->
-    <div class="col-lg-4 col-md-6 mb-4">
-
-      <!--Collection card-->
-      <mdb-card class="collection-card z-depth-1-half">
-        <!--Card image-->
-        <div class="view zoom waves-light" mdbWavesEffect>
-          <mdb-card-img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/8.jpg" alt=""></mdb-card-img>
+          <a href="#">
+            <mdb-card-img src="{{BaseURL + pro.image}}" alt={{pro.name}}></mdb-card-img>
+          </a>
           <div class="stripe light">
             <a>
-              <p>Sweatshirt
+              <p>{{pro.name | uppercase}}
                 <i class="fa fa-angle-right"></i>
               </p>
             </a>
           </div>
         </div>
-        <!--Card image-->
       </mdb-card>
-      <!--Collection card-->
 
+      <!--Collection card-->
     </div>
-    <!--Grid column-->
-
-    <!--Grid column-->
-    <div class="col-lg-4 col-md-6 mb-4">
-
-      <!--Collection card-->
-      <mdb-card class="collection-card z-depth-1-half">
-        <!--Card image-->
-        <div class="view zoom waves-light" mdbWavesEffect>
-          <mdb-card-img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/9.jpg" alt=""></mdb-card-img>
-          <div class="stripe dark">
-            <a>
-              <p>Accessories
-                <i class="fa fa-angle-right"></i>
-              </p>
-            </a>
-          </div>
-        </div>
-        <!--Card image-->
-      </mdb-card>
-      <!--Collection card-->
-
-    </div>
-    <!--Grid column-->
-
-
-
   </div>
-  <!--Grid row-->
 
 </section>
-<!--Section: Products v.4-->
-<!-- Feature Products Ends -->
+<div [hidden]="promotionLoop || errMess">
+  <mat-spinner></mat-spinner>
+  <h4>Loading.. Pl. wait !</h4>
+</div>
+<div fxFlex *ngIf="errMess">
+  <h2>Error</h2>
+  <h4>{{errMess}}</h4>
+</div>
 
+<!--PROMOTIONS ENDS -->
 
-
+<!-- 
 <div class="" fxLayout="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutAlign.gt-md="space-around center"
   fxLayoutGap="10px">
 
@@ -152,7 +96,7 @@
     <h4>Loading.. Pl. wait!</h4>
   </div>
 
-  <mat-card *ngIf="leader " fxFlex>
+  <mat-card *ngIf="leader" fxFlex>
     <mat-card-header>
       <div mat-card-avatar></div>
       <mat-card-title>
@@ -192,8 +136,303 @@
       </p>
     </mat-card-content>
   </mat-card>
+
   <div [hidden]="promotion">
     <mat-spinner></mat-spinner>
     <h4>Loading.. Pl. wait!</h4>
   </div>
-</div>
+ 
+
+</div>-->
+
+
+<!-- Section: Products v.1 -->
+<section class="text-center my-5">
+
+  <!-- Section heading -->
+  <h2 class="h1-responsive font-weight-bold text-center my-5">Our bestsellers</h2>
+  <!-- Section description -->
+  <p class="grey-text text-center w-responsive mx-auto mb-5">Lorem ipsum dolor sit amet, consectetur
+    adipisicing elit. Fugit, error amet numquam iure provident voluptate esse quasi, veritatis totam voluptas
+    nostrum quisquam eum porro a pariatur veniam.</p>
+
+  <!-- Grid row -->
+  <div class="row">
+
+    <!-- Grid column -->
+    <div class="col-lg-3 col-md-6 mb-lg-0 mb-4">
+      <!-- Card -->
+      <div class="card card-cascade narrower card-ecommerce">
+        <!-- Card image -->
+        <div class="view view-cascade overlay">
+          <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/1.jpg" class="card-img-top" alt="sample photo">
+          <a>
+            <div class="mask rgba-white-slight"></div>
+          </a>
+        </div>
+        <!-- Card image -->
+        <!-- Card content -->
+        <div class="card-body card-body-cascade text-center">
+          <!-- Category & Title -->
+          <a href="" class="grey-text">
+            <h5>Denim</h5>
+          </a>
+          <h4 class="card-title">
+            <strong>
+              <a href="">Denim trousers</a>
+            </strong>
+          </h4>
+          <!--Rating-->
+          <ul class="rating">
+            <li>
+              <i class="fas fa-star"></i>
+            </li>
+            <li>
+              <i class="fas fa-star"></i>
+            </li>
+            <li>
+              <i class="fas fa-star"></i>
+            </li>
+            <li>
+              <i class="fas fa-star"></i>
+            </li>
+            <li>
+              <i class="far fa-star"></i>
+            </li>
+          </ul>
+          <!-- Description -->
+          <p class="card-text">Neque porro quisquam est, qui dolorem ipsum quia dolor sit..
+          </p>
+          <!-- Card footer -->
+          <div class="card-footer px-1">
+            <span class="float-left font-weight-bold">
+              <strong>49$</strong>
+            </span>
+            <span class="float-right">
+              <a data-toggle="tooltip" data-placement="top" title="Add to Cart">
+                <i class="fas fa-shopping-cart grey-text ml-3"></i>
+              </a>
+              <a data-toggle="tooltip" data-placement="top" title="Share">
+                <i class="fas fa-share-alt grey-text ml-3"></i>
+              </a>
+              <a class="active" data-toggle="tooltip" data-placement="top" title="Added to Wishlist">
+                <i class="fas fa-heart ml-3"></i>
+              </a>
+            </span>
+          </div>
+        </div>
+        <!-- Card content -->
+      </div>
+      <!-- Card -->
+    </div>
+    <!-- Grid column -->
+
+    <!-- Grid column -->
+    <div class="col-lg-3 col-md-6 mb-lg-0 mb-4">
+      <!-- Card -->
+      <div class="card card-cascade narrower card-ecommerce">
+        <!-- Card image -->
+        <div class="view view-cascade overlay">
+          <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/2.jpg" class="card-img-top" alt="sample photo">
+          <a>
+            <div class="mask rgba-white-slight"></div>
+          </a>
+        </div>
+        <!-- Card image -->
+        <!-- Card content -->
+        <div class="card-body card-body-cascade text-center">
+          <!-- Category & Title -->
+          <a href="" class="grey-text">
+            <h5>Shoes</h5>
+          </a>
+          <h4 class="card-title">
+            <strong>
+              <a href="">High heels</a>
+            </strong>
+          </h4>
+          <!--Rating-->
+          <ul class="rating">
+            <li>
+              <i class="fas fa-star"></i>
+            </li>
+            <li>
+              <i class="fas fa-star"></i>
+            </li>
+            <li>
+              <i class="fas fa-star"></i>
+            </li>
+            <li>
+              <i class="fas fa-star"></i>
+            </li>
+            <li>
+              <i class="fas fa-star"></i>
+            </li>
+          </ul>
+          <!-- Description -->
+          <p class="card-text">Neque porro quisquam est, qui dolorem ipsum quia dolor sit.
+          </p>
+          <!-- Card footer -->
+          <div class="card-footer px-1">
+            <span class="float-left font-weight-bold">
+              <strong>89$</strong>
+            </span>
+            <span class="float-right">
+              <a data-toggle="tooltip" data-placement="top" title="Add to Cart">
+                <i class="fas fa-shopping-cart grey-text ml-3"></i>
+              </a>
+              <a data-toggle="tooltip" data-placement="top" title="Share">
+                <i class="fas fa-share-alt grey-text ml-3"></i>
+              </a>
+              <a class="" data-toggle="tooltip" data-placement="top" title="Add to Wishlist">
+                <i class="fas fa-heart grey-text ml-3"></i>
+              </a>
+            </span>
+          </div>
+        </div>
+        <!-- Card content -->
+      </div>
+      <!-- Card -->
+    </div>
+    <!-- Grid column -->
+
+    <!-- Grid column -->
+    <div class="col-lg-3 col-md-6 mb-md-0 mb-4">
+      <!-- Card -->
+      <div class="card card-cascade narrower card-ecommerce">
+        <!-- Card image -->
+        <div class="view view-cascade overlay">
+          <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/4.jpg" class="card-img-top" alt="sample photo">
+          <a>
+            <div class="mask rgba-white-slight"></div>
+          </a>
+        </div>
+        <!-- Card image -->
+        <!-- Card content -->
+        <div class="card-body card-body-cascade text-center">
+          <!-- Category & Title -->
+          <a href="" class="grey-text">
+            <h5>Outwear</h5>
+          </a>
+          <h4 class="card-title">
+            <strong>
+              <a href="">Brown coat</a>
+            </strong>
+          </h4>
+          <!--Rating-->
+          <ul class="rating">
+            <li>
+              <i class="fas fa-star"></i>
+            </li>
+            <li>
+              <i class="fas fa-star"></i>
+            </li>
+            <li>
+              <i class="fas fa-star"></i>
+            </li>
+            <li>
+              <i class="fas fa-star"></i>
+            </li>
+            <li>
+              <i class="fas fa-star-half-alt"></i>
+            </li>
+          </ul>
+          <!-- Description -->
+          <p class="card-text">Neque porro quisquam est, qui dolorem ipsum quia dolor sit.
+          </p>
+          <!-- Card footer -->
+          <div class="card-footer px-1">
+            <span class="float-left font-weight-bold">
+              <strong>59$</strong>
+            </span>
+            <span class="float-right">
+              <a data-toggle="tooltip" data-placement="top" title="Add to Cart">
+                <i class="fas fa-shopping-cart grey-text ml-3"></i>
+              </a>
+              <a data-toggle="tooltip" data-placement="top" title="Share">
+                <i class="fas fa-share-alt grey-text ml-3"></i>
+              </a>
+              <a class="" data-toggle="tooltip" data-placement="top" title="Add to Wishlist">
+                <i class="fas fa-heart grey-text ml-3"></i>
+              </a>
+            </span>
+          </div>
+        </div>
+        <!-- Card content -->
+      </div>
+      <!-- Card -->
+    </div>
+    <!-- Grid column -->
+
+    <!-- Grid column -->
+    <div class="col-lg-3 col-md-6">
+      <!-- Card -->
+      <div class="card card-cascade narrower card-ecommerce">
+        <!-- Card image -->
+        <div class="view view-cascade overlay">
+          <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/3.jpg" class="card-img-top" alt="sample photo">
+          <a>
+            <div class="mask rgba-white-slight"></div>
+          </a>
+        </div>
+        <!-- Card image -->
+        <!-- Card content -->
+        <div class="card-body card-body-cascade text-center">
+          <!-- Category & Title -->
+          <a href="" class="grey-text">
+            <h5>Blouses</h5>
+          </a>
+          <h4 class="card-title">
+            <strong>
+              <a href="">Shirt</a>
+            </strong>
+          </h4>
+          <!--Rating-->
+          <ul class="rating">
+            <li>
+              <i class="fas fa-star"></i>
+            </li>
+            <li>
+              <i class="fas fa-star"></i>
+            </li>
+            <li>
+              <i class="fas fa-star"></i>
+            </li>
+            <li>
+              <i class="fas fa-star"></i>
+            </li>
+            <li>
+              <i class="far fa-star"></i>
+            </li>
+          </ul>
+          <!-- Description -->
+          <p class="card-text">Neque porro quisquam est, qui dolorem ipsum quia dolor sit.
+          </p>
+          <!-- Card footer -->
+          <div class="card-footer px-1">
+            <span class="float-left font-weight-bold">
+              <strong>119$</strong>
+            </span>
+            <span class="float-right">
+              <a data-toggle="tooltip" data-placement="top" title="Add to Cart">
+                <i class="fas fa-shopping-cart grey-text ml-3"></i>
+              </a>
+              <a data-toggle="tooltip" data-placement="top" title="Share">
+                <i class="fas fa-share-alt grey-text ml-3"></i>
+              </a>
+              <a class="active" data-toggle="tooltip" data-placement="top" title="Added to Wishlist">
+                <i class="fas fa-heart ml-3"></i>
+              </a>
+            </span>
+          </div>
+        </div>
+        <!-- Card content -->
+      </div>
+      <!-- Card -->
+    </div>
+    <!-- Grid column -->
+
+  </div>
+  <!-- Grid row -->
+
+</section>
+<!-- Section: Products v.1 -->

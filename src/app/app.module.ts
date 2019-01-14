@@ -45,7 +45,10 @@ import { LoginComponent } from './login/login.component';
 import { ProductService } from './services/product.service';
 import { PromotionService } from './services/promotion.service';
 import { LeadersService } from './services/leaders.service';
+import { BannerService } from './services/banner.service';
+
 import { HighlightDirective } from './directives/highlight.directive';
+import { BannerComponent } from './banner/banner.component';
 
 
 /** MDB Starts */
@@ -66,7 +69,8 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
     AboutComponent,
     ContactComponent,
     LoginComponent,
-    HighlightDirective
+    HighlightDirective,
+    BannerComponent
   ],
   imports: [
     BrowserModule,
@@ -97,6 +101,7 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
     PromotionService,
     LeadersService,
     ProcessHTTPMsgService,
+    BannerService,
     { provide: 'BaseURL', useValue: baseURL }
   ],
   entryComponents: [
