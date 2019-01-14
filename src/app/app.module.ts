@@ -1,3 +1,9 @@
+/**
+  - Angular App Module is the main file
+  - All the components, services, directives, modules etc., have to add in this
+  - 
+ */
+
 import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserModule } from '@angular/platform-browser';
@@ -18,16 +24,15 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSliderModule } from '@angular/material/slider';
 
+import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 
-import { HttpModule } from '@angular/http';
 
 import { baseURL } from './shared/baseurl';
-
 import { ProcessHTTPMsgService } from './services/process-httpmsg.service';
 
-
 import 'hammerjs';
+
 /* App Specific Component Starts */
 import { AppComponent } from './app.component';
 
@@ -43,10 +48,10 @@ import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { MenuComponent } from './pages/menu/menu.component';
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
+import { BannerComponent } from './global/banner/banner.component';
 /* pages ends */
 
 import { AppRoutingModule } from './app-routing/app-routing.module';
-
 /* App Specific Component Ends */
 
 /* Services Imports Starts */
@@ -55,9 +60,9 @@ import { PromotionService } from './services/promotion.service';
 import { LeadersService } from './services/leaders.service';
 import { BannerService } from './services/banner.service';
 
+/** Custom Directives Starts */
 import { HighlightDirective } from './directives/highlight.directive';
-import { BannerComponent } from './global/banner/banner.component';
-
+/** Custom Directives Ends */
 
 /** MDB Starts */
 import { MDBBootstrapModule } from 'angular-bootstrap-md';

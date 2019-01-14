@@ -17,14 +17,6 @@ export class BannerComponent implements OnInit {
     private BannerService: BannerService,
     @Inject('BaseURL') private BaseURL
   ) { }
-
-  /* ngOnInit() {
-    debugger;
-    this.bannerService.getFeaturedBanner().subscribe((banner) => this.banner = banner);
-    debugger;
-    errMess => this.errMess = <any>errMess
-  } */
-
   ngOnInit() {
     this.BannerService.getBanners()
       .subscribe(
