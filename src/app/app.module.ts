@@ -30,15 +30,23 @@ import { ProcessHTTPMsgService } from './services/process-httpmsg.service';
 import 'hammerjs';
 /* App Specific Component Starts */
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
-import { HomeComponent } from './home/home.component';
-import { AboutComponent } from './about/about.component';
-import { ContactComponent } from './contact/contact.component';
-import { MenuComponent } from './menu/menu.component';
-import { ProductDetailComponent } from './product-detail/product-detail.component';
+
+/* global starts */
+import { HeaderComponent } from './global/header/header.component';
+import { FooterComponent } from './global/footer/footer.component';
+import { LoginComponent } from './global/login/login.component';
+/* global ends */
+
+/* pages starts */
+import { HomeComponent } from './pages/home/home.component';
+import { AboutComponent } from './pages/about/about.component';
+import { ContactComponent } from './pages/contact/contact.component';
+import { MenuComponent } from './pages/menu/menu.component';
+import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
+/* pages ends */
+
 import { AppRoutingModule } from './app-routing/app-routing.module';
-import { LoginComponent } from './login/login.component';
+
 /* App Specific Component Ends */
 
 /* Services Imports Starts */
@@ -48,7 +56,7 @@ import { LeadersService } from './services/leaders.service';
 import { BannerService } from './services/banner.service';
 
 import { HighlightDirective } from './directives/highlight.directive';
-import { BannerComponent } from './banner/banner.component';
+import { BannerComponent } from './global/banner/banner.component';
 
 
 /** MDB Starts */

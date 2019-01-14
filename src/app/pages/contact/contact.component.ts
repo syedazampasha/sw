@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Feedback, ContactType } from './../shared/feedback';
+import { Feedback, ContactType } from './../../shared/feedback';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({

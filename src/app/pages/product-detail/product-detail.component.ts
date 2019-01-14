@@ -1,15 +1,15 @@
-import { routes } from './../app-routing/routes';
+import { routes } from './../../app-routing/routes';
 
 import { Component, OnInit, Input, ViewChild, Inject } from '@angular/core';
-import { Product } from './../shared/product';
+import { Product } from './../../shared/product';
 //import {PRODUCTS} from '../shared/products';
 
 import { Params, ActivatedRoute } from '@angular/router';// for product specific id
 import { Location } from '@angular/common';  // for product specific id
 
-import { ProductService } from './../services/product.service';
+import { ProductService } from './../../services/product.service';
 import { switchMap } from 'rxjs/operators';
-import { Comment } from '../shared/comment';
+import { Comment } from '../../shared/comment';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({

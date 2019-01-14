@@ -1,18 +1,18 @@
 
 import { Component, OnInit, Inject } from '@angular/core';
 
-import { Product } from '../shared/product';
-import { ProductService } from '../services/product.service';
+import { Product } from './../../shared/product';
+import { ProductService } from './../../services/product.service';
 
-import { Promotion } from '../shared/promotion';
-import { PromotionService } from '../services/promotion.service';
+import { Promotion } from './../../shared/promotion';
+import { PromotionService } from './../../services/promotion.service';
 
-import { Leader } from './../shared/leader';
-import { LeadersService } from './../services/leaders.service';
+import { Leader } from './../../shared/leader';
+import { LeadersService } from './../../services/leaders.service';
 
 
-import { Banner } from './../shared/banner';
-import { BannerService } from './../services/banner.service';
+import { Banner } from './../../shared/banner';
+import { BannerService } from './../../services/banner.service';
 
 @Component({
   selector: 'app-home',

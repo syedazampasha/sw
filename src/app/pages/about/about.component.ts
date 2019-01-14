@@ -1,7 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 
-import { Leader } from './../shared/leader';
-import { LeadersService } from './../services/leaders.service';
+import { Leader } from './../../shared/leader';
+import { LeadersService } from './../../services/leaders.service';
 
 //import { baseURL } from './../shared/baseurl';
 

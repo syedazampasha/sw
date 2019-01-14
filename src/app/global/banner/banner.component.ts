@@ -1,7 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 
-import { Banner } from '../shared/banner';
-import { BannerService } from '../services/banner.service';
+import { Banner } from '../../shared/banner';
+import { BannerService } from '../../services/banner.service';
 
 @Component({
   selector: 'app-banner',
