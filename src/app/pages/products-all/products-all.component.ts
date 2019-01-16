@@ -1,13 +1,13 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { Product } from '../../shared/product'; 
+import { Product } from '../../shared/product';
 import { ProductService } from './../../services/product.service';
 
 import { flyInOut, expand } from './../../animations/app.animations';
 
 @Component({
-  selector: 'app-menu',
-  templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.scss'],
+  selector: 'app-products-all',
+  templateUrl: './products-all.component.html',
+  styleUrls: ['./products-all.component.scss'],
   host: {
     '[@flyInOut]': 'true',
     'style': 'display:block'
@@ -17,8 +17,7 @@ import { flyInOut, expand } from './../../animations/app.animations';
     expand()
   ]
 })
-
-export class MenuComponent implements OnInit {
+export class ProductsAllComponent implements OnInit {
 
   products: Product[];
   errMess: string;

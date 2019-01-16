@@ -12,11 +12,22 @@ import { switchMap } from 'rxjs/operators';
 import { Comment } from '../../shared/comment';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
+import { visibility, flyInOut } from './../../animations/app.animations';
+
 @Component({
   selector: 'app-product-detail',
   templateUrl: './product-detail.component.html',
-  styleUrls: ['./product-detail.component.scss']
+  styleUrls: ['./product-detail.component.scss'],
+  animations: [
+    visibility(),
+    flyInOut()
+  ],
+  host: {
+    '[@flyInOut]': 'true',
+    'style': 'display:block'
+  }
 })
+
 
 export class ProductDetailComponent implements OnInit {
 
@@ -31,6 +42,7 @@ export class ProductDetailComponent implements OnInit {
   next: string;
   productcopy: Product;
   visibility = 'shown';
+
 
   reviewErrors = {
     'author': '',
@@ -66,17 +78,24 @@ export class ProductDetailComponent implements OnInit {
 
   ngOnInit() {
     this.productService.getProductIds()
-      .subscribe((productIds => this.productIds = productIds));
+      .subscribe(
+        (productIds => this.productIds = productIds)
+      );
 
-    this.route.params.pipe(switchMap((params: Params) => this.productService.getProduct(params['id'])))
+    this.route.params
+      .pipe(switchMap((params: Params) => {
+        this.visibility = 'hidden';
+        return this.productService.getProduct(params['id'])
+      }))
+
       .subscribe(product => {
         this.product = product;
         this.productcopy = product;
         this.setPrevNext(product.id);
         this.visibility = 'shown';
-      });
+      })
   }
-  
+
   setPrevNext(productIds: string) {
     const index = this.productIds.indexOf(productIds);
     this.prev = this.productIds[(this.productIds.length + index - 1) % this.productIds.length];

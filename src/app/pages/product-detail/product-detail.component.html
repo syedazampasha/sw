@@ -1,39 +1,162 @@
+<section class="product-details">
+  <div class="container-fluid" *ngIf="product" [@visibility]="visibility">
+    <div class="row">
+      <div class="col-lg-6 py-3 order-2 order-lg-1">
+        <mdb-carousel class="carousel slide carousel-fade" [animation]="'fade'">
+          <mdb-carousel-item>
+            <img src="{{ BaseURL + product.image}}" alt=" {{ product.name }}" width="500px" />
+          </mdb-carousel-item>
+          <mdb-carousel-item>
+            <img src="{{ BaseURL + product.image}}" alt=" {{ product.name }}" width="500px" />
+          </mdb-carousel-item>
+        </mdb-carousel>
+
+      </div>
+
+      <div class="d-flex align-items-center col-lg-6 col-xl-5 pl-lg-5 mb-5 order-1 order-lg-2">
+        <div>
+          <ul class="breadcrumb justify-content-start">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item"><a href="category.html">Tops and Jackets</a></li>
+            <li class="breadcrumb-item active">Modern Jacket</li>
+          </ul>
+          <h1 class="mb-4">{{ product.name | uppercase}}</h1>
+          <div class="d-flex flex-column flex-sm-row align-items-sm-center justify-content-sm-between mb-4">
+            <ul class="list-inline mb-2 mb-sm-0">
+              <li class="list-inline-item h4 font-weight-light mb-0">Rs. {{ product.price }}/-</li>
+              <li class="list-inline-item text-muted font-weight-light">
+                <del>Rs. {{ product.price }}/- </del>
+              </li>
+            </ul>
+            <div class="d-flex align-items-center">
+              <ul class="list-inline mr-2 mb-0">
+                <li class="list-inline-item mr-0"><i class="fa fa-star text-primary"></i></li>
+                <li class="list-inline-item mr-0"><i class="fa fa-star text-primary"></i></li>
+                <li class="list-inline-item mr-0"><i class="fa fa-star text-primary"></i></li>
+                <li class="list-inline-item mr-0"><i class="fa fa-star text-primary"></i></li>
+                <li class="list-inline-item mr-0"><i class="fa fa-star text-gray-300"></i></li>
+              </ul><span class="text-muted text-uppercase text-sm">25 reviews</span>
+            </div>
+          </div>
+          <p class="mb-4 text-muted">{{ product.description }}</p>
+          <form action="#">
+            <div class="row">
+              <div class="col-sm-6 col-lg-12 detail-option mb-3">
+                <h6 class="detail-option-heading">Size <span>(required)</span></h6>
+                <label for="size_0" class="btn btn-sm btn-outline-secondary detail-option-btn-label">
+
+                  Small
+                  <input type="radio" name="size" value="value_0" id="size_0" required="" class="input-invisible">
+                </label>
+                <label for="size_1" class="btn btn-sm btn-outline-secondary detail-option-btn-label">
+
+                  Medium
+                  <input type="radio" name="size" value="value_1" id="size_1" required="" class="input-invisible">
+                </label>
+                <label for="size_2" class="btn btn-sm btn-outline-secondary detail-option-btn-label">
+
+                  Large
+                  <input type="radio" name="size" value="value_2" id="size_2" required="" class="input-invisible">
+                </label>
+              </div>
+              <div class="col-sm-6 col-lg-12 detail-option mb-3">
+                <h6 class="detail-option-heading">Type <span>(required)</span></h6>
+                <label for="material_0" class="btn btn-sm btn-outline-secondary detail-option-btn-label">
+
+                  Hoodie
+                  <input type="radio" name="material" value="value_0" id="material_0" required="" class="input-invisible">
+                </label>
+                <label for="material_1" class="btn btn-sm btn-outline-secondary detail-option-btn-label">
+
+                  College
+                  <input type="radio" name="material" value="value_1" id="material_1" required="" class="input-invisible">
+                </label>
+              </div>
+              <div class="col-12 detail-option mb-3">
+                <h6 class="detail-option-heading">Colour <span>(required)</span></h6>
+                <ul class="list-inline mb-0 colours-wrapper">
+                  <li class="list-inline-item">
+                    <label for="colour_Blue" style="background-color: #668cb9" class="btn-colour"> </label>
+                    <input type="radio" name="colour" value="value_Blue" id="colour_Blue" required="" class="input-invisible">
+                  </li>
+                  <li class="list-inline-item">
+                    <label for="colour_White" style="background-color: #fff" class="btn-colour"> </label>
+                    <input type="radio" name="colour" value="value_White" id="colour_White" required="" class="input-invisible">
+                  </li>
+                  <li class="list-inline-item">
+                    <label for="colour_Violet" style="background-color: #8b6ea4" class="btn-colour"> </label>
+                    <input type="radio" name="colour" value="value_Violet" id="colour_Violet" required="" class="input-invisible">
+                  </li>
+                  <li class="list-inline-item">
+                    <label for="colour_Red" style="background-color: #dd6265" class="btn-colour"> </label>
+                    <input type="radio" name="colour" value="value_Red" id="colour_Red" required="" class="input-invisible">
+                  </li>
+                </ul>
+              </div>
+              <div class="col-12 detail-option mb-5">
+                <label class="detail-option-heading font-weight-bold">Items <span>(required)</span></label>
+                <input name="items" type="number" value="1" class="form-control detail-quantity">
+              </div>
+            </div>
+            <ul class="list-inline">
+              <li class="list-inline-item">
+                <button type="submit" class="btn btn-dark btn-lg mb-1"> <i class="fa fa-shopping-cart mr-2"></i>Add to
+                  Cart</button>
+              </li>
+              <li class="list-inline-item"><a href="#" class="btn btn-outline-secondary mb-1"> <i class="far fa-heart mr-2"></i>Add
+                  to wishlist</a></li>
+            </ul>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- 
+
 <div class="container" fxLayout="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutAlign.gt-md="space-around center"
   fxLayoutGap="10px" fxLayoutGap.xs="0">
+ -->
 
-  <div fxFlex="60" *ngIf="product">
-    <mat-card>
+<!--   <div fxFlex="60" *ngIf="product" [@visibility]="visibility"> -->
+
+<!--  <button mat-button [routerLink]="['/productdetail', prev]">
+      <span class="fa fa-chevron-left fa-lg"></span>
+    </button>
+
+    <span class="flex-spacer"></span>
+
+    <button mat-button [routerLink]="['/productdetail', next]">
+      <span class="fa fa-chevron-right fa-lg"></span>
+    </button> -->
+
+<!-- <mat-card>
       <mat-card-header>
+
         <mat-card-title>
           <h3>{{ product.name | uppercase}}</h3>
         </mat-card-title>
       </mat-card-header>
       <img mat-card-image src="{{BaseURL + product.image}}" alt="{{product.name}}">
       <mat-card-content>
-        <p>sad : {{ product.description }}
+        <p>
+          {{ product.description }}
         </p>
       </mat-card-content>
       <mat-card-actions>
-
-        <button mat-button [routerLink]="['/productdetail', prev]">
-          <span class="fa fa-chevron-left fa-lg"></span>
-        </button>
-
         <button mat-button (click)="goBack()">Back</button>
         <button mat-button>LIKE</button>
         <button mat-button>SHARE</button>
 
-
-        <span class="flex-spacer"></span>
-        <button mat-button [routerLink]="['/productdetail', next]">
-          <span class="fa fa-chevron-right fa-lg"></span>
-        </button>
       </mat-card-actions>
-    </mat-card>
-  </div>
+    </mat-card> -->
+<!-- </div> -->
 
 
-  <div fxFlex="40" *ngIf="product">
+<!-- <div fxFlex="40" *ngIf="product">
     <mat-list>
       <h3> Comments </h3>
       <mat-list-item *ngFor="let comment of product.comments">
@@ -85,6 +208,11 @@
       <button type="submit" [disabled]="submitReview.invalid" mat-button class="background-primary text-floral-white">Submit</button>
     </form>
 
-  </div>
+  </div> -->
+<!-- 
+</div> -->
 
-</div>
+
+<!-- <script>
+  $('.carousel').carousel();
+</script> -->

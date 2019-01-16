@@ -5,7 +5,7 @@
 </div> -->
 
 <div class="product-container" fxlayout="column" fxLayoutGap="0px">
-  <div fxFlex *ngIf="products">
+  <div fxFlex *ngIf="products" [@expand]>
     <mat-grid-list cols="2">
       <mat-grid-tile *ngFor="let pro of products" [routerLink]="['/productdetail/', pro.id]" appHighlight>
         <span>{{ pro.id }}</span>

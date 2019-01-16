@@ -1,20 +1,41 @@
+
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Feedback, ContactType } from './../../shared/feedback';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { flyInOut } from './../../animations/app.animations';
+
+import { FeedbackService } from './../../services/feedback.service';
 
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.scss']
+  styleUrls: ['./contact.component.scss'],
+  host: {
+    '[@flyInOut]': 'true',
+    'style': 'display:block'
+  },
+  animations: [
+    flyInOut()
+  ]
 })
+
 export class ContactComponent implements OnInit {
 
   feedbackForm: FormGroup;
   feedback: Feedback;
   contactType = ContactType;
+  errMess: string;
+  spin: boolean;
+  confirm: boolean;
+
   @ViewChild('fform') feedbackFormDirective;
 
-  constructor(private fb: FormBuilder) {
+  constructor(
+    private fb: FormBuilder,
+    private feedbackService: FeedbackService
+  ) {
+    this.confirm = false;
+    this.spin = false;
     this.createForm();
   }
 
@@ -85,18 +106,51 @@ export class ContactComponent implements OnInit {
     }
   }
 
+  /*   onSubmit() {
+      this.feedback = this.feedbackForm.value;
+      console.log(this.feedback);
+      this.feedbackForm.reset({
+        firstname: '',
+        lastname: '',
+        telnum: 0,
+        email: '',
+        agree: false,
+        contacttype: '',
+        message: ''
+      });
+      this.feedbackFormDirective.resetForm();
+    } */
+
   onSubmit() {
     this.feedback = this.feedbackForm.value;
     console.log(this.feedback);
-    this.feedbackForm.reset({
-      firstname: '',
-      lastname: '',
-      telnum: 0,
-      email: '',
-      agree: false,
-      contacttype: '',
-      message: ''
-    });
-    this.feedbackFormDirective.resetForm();
+    if (this.feedback) {
+      this.spin = true;
+      const feedbackCopy = Object.assign({}, this.feedback);
+      this.feedbackService.submitFeedback(feedbackCopy)
+        .subscribe(feedback => {
+          this.feedback = feedback;
+          this.spin = false;
+          this.confirm = true;
+          setTimeout(() => { this.confirm = false; }, 5000);
+          this.feedbackForm.reset({
+            firstname: '',
+            lastname: '',
+            telnum: 0,
+            email: '',
+            agree: false,
+            contacttype: 'None',
+            message: ''
+          });
+          this.feedbackFormDirective.resetForm();
+        },
+          errmess => {
+            this.feedback = null;
+            this.spin = false;
+            this.confirm = false;
+            this.errMess = <any>errmess;
+          });
+    }
+
   }
 }

@@ -3,7 +3,7 @@
     [containerInside]="true">
 
     <mdb-navbar-brand>
-      <a class="logo navbar-brand" href="#">
+      <a class="logo navbar-brand" href="#" routerLink='/home'>
         <img src="/assets/images/logo.png" height=30 width=41>
       </a>
     </mdb-navbar-brand>
@@ -22,9 +22,15 @@
             About
           </a>
         </li>
-        <li class="nav-item waves-light" mdbWavesEffect>
+        <!-- <li class="nav-item waves-light" mdbWavesEffect>
           <a routerLink="/menu" routerLinkActive="active" class="nav-link">
             Menu
+          </a>
+        </li> -->
+
+        <li class="nav-item waves-light" mdbWavesEffect>
+          <a routerLink="/productsall" routerLinkActive="active" class="nav-link">
+            Products
           </a>
         </li>
 
