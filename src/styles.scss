@@ -3,6 +3,10 @@
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
 @import 'variables';
 @import '../node_modules/font-awesome/scss/font-awesome';
+@import '../node_modules/bootstrap-scss/bootstrap';
+/* @import '../node_modules/angular-bootstrap-md/scss/angular/mdb-angular-free'; */
+
+
 $img-global: "assets/images/global";
 body {
     padding: 0;

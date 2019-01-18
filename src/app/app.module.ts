@@ -48,7 +48,7 @@ import { LoginComponent } from './global/login/login.component';
 import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
-import { MenuComponent } from './pages/menu/menu.component'; 
+import { MenuComponent } from './pages/menu/menu.component';
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 import { BannerComponent } from './global/banner/banner.component';
 /* pages ends */
@@ -68,7 +68,7 @@ import { HighlightDirective } from './directives/highlight.directive';
 
 /** MDB Starts */
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
-import { ProductsAllComponent } from './pages/products-all/products-all.component'; 
+import { ProductsAllComponent } from './pages/products-all/products-all.component';
 /** MDB Ends */
 
 
@@ -87,7 +87,7 @@ import { ProductsAllComponent } from './pages/products-all/products-all.componen
     LoginComponent,
     HighlightDirective,
     BannerComponent,
-    ProductsAllComponent 
+    ProductsAllComponent
   ],
   imports: [
     BrowserModule,
