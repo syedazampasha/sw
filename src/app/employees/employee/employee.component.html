@@ -1,3 +1,29 @@
-<p>
-  employee works!
-</p>
+<h1 class="display-4">Emp. Register</h1>
+<form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+    <input type="hidden" name="id" #id="ngModel" [(ngModel)]="service.formData.fullName">
+
+    <div class="form-group">
+        <input name="fullName" #fullName="ngModel" [(ngModel)]="service.formData.fullName" class="form-control"
+            placeholder="Full Name" required autocomplete="false">
+        <div *ngIf="fullName.invalid && fullName.touched" class="validation-error">
+            This field is required.
+        </div>
+    </div>
+    <div class="form-group">
+        <input name="position" #fullName="ngModel" [(ngModel)]="service.formData.position" class="form-control"
+            placeholder="Position">
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <input name="empCode" #fullName="ngModel" [(ngModel)]="service.formData.empCode" class="form-control"
+                placeholder="Emp Code">
+        </div>
+        <div class="form-group col-md-6">
+            <input name="mobile" #fullName="ngModel" [(ngModel)]="service.formData.mobile" class="form-control"
+                placeholder="Mobile #">
+        </div>
+    </div>
+    <div class="form-group">
+        <button type="submit" [disabled]="form.invalid" class="btn btn-lg btn-block btn-info">SUBMIT</button>
+    </div>
+</form>

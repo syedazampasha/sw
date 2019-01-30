@@ -24,11 +24,10 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSliderModule } from '@angular/material/slider';
 
-
-
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 
+import { ToastrModule } from 'ngx-toastr';
 
 import { baseURL } from './shared/baseurl';
 import { ProcessHTTPMsgService } from './services/process-httpmsg.service';
@@ -78,10 +77,13 @@ import { CheckoutComponent } from './pages/checkout/checkout.component';
 
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
-import { environment } from 'src/environments/environment';
+
 import { EmployeesComponent } from './employees/employees.component';
 import { EmployeeComponent } from './employees/employee/employee.component';
 import { EmployeeListComponent } from './employees/employee-list/employee-list.component';
+
+import { environment } from './../environments/environment';
+import { EmployeeService } from './shared/employee.service';
 
 /* Services Imports Ends */
 
@@ -132,7 +134,8 @@ import { EmployeeListComponent } from './employees/employee-list/employee-list.c
     HttpModule,
     AngularFireModule.initializeApp(environment.firebaseconfig),
     AngularFirestoreModule,
-    MDBBootstrapModule.forRoot()
+    MDBBootstrapModule.forRoot(),
+    ToastrModule.forRoot()
   ],
   providers: [
     ProductService,
@@ -140,12 +143,13 @@ import { EmployeeListComponent } from './employees/employee-list/employee-list.c
     LeadersService,
     ProcessHTTPMsgService,
     BannerService,
-    { provide: 'BaseURL', useValue: baseURL }
+    { provide: 'BaseURL', useValue: baseURL },
+    EmployeeService
   ],
   entryComponents: [
     LoginComponent
   ],
   bootstrap: [AppComponent],
   schemas: [NO_ERRORS_SCHEMA]
-})
+}) 
 export class AppModule { }
