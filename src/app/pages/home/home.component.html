@@ -173,7 +173,7 @@
   <div class="row products-all-container" [@expand]>
     <!-- Grid column -->
     <div class="col-lg-3 col-md-6  mb-4 pro-list" *ngFor="let product of productsall" [routerLink]="['/productdetail/', product.id]">
-      <div class="card card-cascade narrower card-ecommerce">
+      <div class="card card-cascade narrower card-ecommerce" id={{product.id}} (click)="getId($event)">
         <div class="view view-cascade overlay">
           <img src="{{BaseURL + product.image}} " class="card-img-top" alt="sample photo">
           <a>

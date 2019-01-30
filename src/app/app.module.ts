@@ -69,8 +69,19 @@ import { HighlightDirective } from './directives/highlight.directive';
 /** MDB Starts */
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { ProductsAllComponent } from './pages/products-all/products-all.component';
+import { AddProductComponent } from './pages/ADMIN/add-product/add-product.component';
+import { EditProductComponent } from './pages/ADMIN/edit-product/edit-product.component';
+import { DeleteProductComponent } from './pages/ADMIN/delete-product/delete-product.component';
+import { CartComponent } from './pages/cart/cart.component';
+import { CheckoutComponent } from './pages/checkout/checkout.component';
 /** MDB Ends */
 
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { environment } from 'src/environments/environment';
+import { EmployeesComponent } from './employees/employees.component';
+import { EmployeeComponent } from './employees/employee/employee.component';
+import { EmployeeListComponent } from './employees/employee-list/employee-list.component';
 
 /* Services Imports Ends */
 
@@ -87,7 +98,15 @@ import { ProductsAllComponent } from './pages/products-all/products-all.componen
     LoginComponent,
     HighlightDirective,
     BannerComponent,
-    ProductsAllComponent
+    ProductsAllComponent,
+    AddProductComponent,
+    EditProductComponent,
+    DeleteProductComponent,
+    CartComponent,
+    CheckoutComponent,
+    EmployeesComponent,
+    EmployeeComponent,
+    EmployeeListComponent
   ],
   imports: [
     BrowserModule,
@@ -111,6 +130,8 @@ import { ProductsAllComponent } from './pages/products-all/products-all.componen
     MatSliderModule,
     HttpClientModule,
     HttpModule,
+    AngularFireModule.initializeApp(environment.firebaseconfig),
+    AngularFirestoreModule,
     MDBBootstrapModule.forRoot()
   ],
   providers: [

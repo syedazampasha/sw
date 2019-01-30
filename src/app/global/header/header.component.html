@@ -17,11 +17,19 @@
             Home
           </a>
         </li>
+
+        <li class="nav-item waves-light" mdbWavesEffect>
+          <a routerLink='/addProduct' routerLinkActive="active" class="nav-link">
+            Add Product
+          </a>
+        </li>
+
         <li class="nav-item waves-light" mdbWavesEffect>
           <a routerLink="/about" routerLinkActive="active" class="nav-link">
             About
           </a>
         </li>
+
         <!-- <li class="nav-item waves-light" mdbWavesEffect>
           <a routerLink="/menu" routerLinkActive="active" class="nav-link">
             Menu
@@ -30,7 +38,7 @@
 
         <li class="nav-item waves-light" mdbWavesEffect>
           <a routerLink="/productsall" routerLinkActive="active" class="nav-link">
-            Products
+            ADMIN
           </a>
         </li>
 
@@ -39,22 +47,33 @@
             Contact
           </a>
         </li>
+
         <li class="nav-item waves-light float-right" mdbWavesEffect>
           <a (click)="openLoginForm()" class="nav-link">
             <span class="fa fa-sign-in fa-lg"></span> Login
           </a>
         </li>
 
-
-        <li class="nav-item ">
-            <a class="nav-link dark-grey-text font-weight-bold waves-effect waves-light" href="#" data-toggle="modal" data-target="#cart-modal-ex">
-                <!-- <span class="badge danger-color">4</span> -->
-                <i class="fas fa-shopping-cart blue-text" aria-hidden="true"></i>
-                <span class="clearfix d-none d-sm-inline-block">Cart</span>
-            </a>
+        <li class="nav-item waves-light" mdbWavesEffect>
+          <a routerLink="/cart" routerLinkActive="active" class="nav-link">
+            Cart
+          </a>
         </li>
 
 
+        <li class="nav-item waves-light" mdbWavesEffect>
+          <a routerLink="/checkout" routerLinkActive="active" class="nav-link">
+            checkout
+          </a>
+        </li> 
+        <!-- <li class="nav-item ">
+          <a routerLink="/cart" class="nav-link dark-grey-text font-weight-bold waves-effect waves-light"  data-toggle="modal"
+            data-target="#cart-modal-ex">
+            <i class="fas fa-shopping-cart blue-text" aria-hidden="true"></i>
+            <span class="clearfix d-none d-sm-inline-block">Cart</span>
+          </a>
+        </li> -->
+ 
       </ul>
 
 
@@ -65,7 +84,7 @@
         </div>
       </form>
     </links>
-<!-- 
+    <!-- 
     <ul class="navbar-nav ml-auto">
        
         <li class="nav-item ml-3">

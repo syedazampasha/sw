@@ -2,7 +2,7 @@
   sadasd ads ad<span>{{ pro.id }}</span>
   <img height="200px" src="{{BaseURL + pro.image}}" alt={{pro.name}}>
 </div> -->
-
+<!-- 
 <div class="product-container" fxlayout="column" fxLayoutGap="0px">
   <div fxFlex *ngIf="products" [@expand]>
     <mat-grid-list cols="2">
@@ -25,7 +25,10 @@
     <h4>{{errMess}}</h4>
   </div>
 
-  <!-- <div fxFlex *ngIf="selectedProduct">
+
+</div> -->
+
+<!-- <div fxFlex *ngIf="selectedProduct">
       <mat-card>
         <mat-card-header>
           <h3>{{ selectedProduct.name | uppercase }}</h3>
@@ -73,4 +76,329 @@
       </mat-card>
     </div> -->
 
+
+
+<!-- <div class="product-container" fxlayout="column" fxLayoutGap="0px">
+  <h3>Admin </h3>
+  <div fxFlex *ngIf="products" [@expand]>
+    <mat-grid-list cols="2">
+      <mat-grid-tile *ngFor="let pro of products" [routerLink]="['/productdetail/', pro.id]" appHighlight>
+        <span>{{ pro.id }}</span>
+        <img height="200px" src="{{BaseURL + pro.image}}" alt={{pro.name}}>
+        <mat-grid-tile-footer>
+          <h1> {{pro.name | uppercase}}</h1>
+        </mat-grid-tile-footer>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+</div> -->
+
+
+<div class="col-md-3">
+  <h2 class="text-center">Add Product</h2>
+  <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+      <label>name:</label>
+      <input type="text" formControlName="name" placeholder="name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.name.errors }">
+      <div *ngIf="submitted && f.name.errors">
+        <div *ngIf="f.name.errors.required">name is required</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>category:</label>
+      <input type="text" formControlName="category" placeholder="category" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.category.errors }">
+      <div *ngIf="submitted && f.category.errors">
+        <div *ngIf="f.category.errors.required">category is required</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>tag:</label>
+      <input type="text" formControlName="tag" placeholder="tag" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.tag.errors }">
+      <div *ngIf="submitted && f.tag.errors">
+        <div *ngIf="f.tag.errors.required">tag is required</div>
+      </div>
+    </div>
+
+
+    <div class="form-group">
+      <label>qty:</label>
+      <input type="text" formControlName="qty" placeholder="qty" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.qty.errors }">
+      <div *ngIf="submitted && f.qty.errors">
+        <div *ngIf="f.qty.errors.required">qty is required</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>price:</label>
+      <input type="text" formControlName="price" placeholder="price" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.price.errors }">
+      <div *ngIf="submitted && f.price.errors">
+        <div *ngIf="f.price.errors.required">price is required</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>size:</label>
+      <input type="text" formControlName="size" placeholder="size" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.size.errors }">
+      <div *ngIf="submitted && f.size.errors">
+        <div *ngIf="f.size.errors.required">size is required</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>image:</label>
+      <input type="text" formControlName="image" placeholder="image" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.image.errors }">
+      <div *ngIf="submitted && f.image.errors">
+        <div *ngIf="f.image.errors.required">image is required</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>outofstock:</label>
+      <input type="text" formControlName="outofstock" placeholder="outofstock" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.outofstock.errors }">
+      <div *ngIf="submitted && f.outofstock.errors">
+        <div *ngIf="f.outofstock.errors.required">outofstock is required</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>note:</label>
+      <input type="text" formControlName="note" placeholder="note" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.note.errors }">
+      <div *ngIf="submitted && f.note.errors">
+        <div *ngIf="f.note.errors.required">note is required</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>material:</label>
+      <input type="text" formControlName="material" placeholder="material" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.material.errors }">
+      <div *ngIf="submitted && f.material.errors">
+        <div *ngIf="f.material.errors.required">material is required</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>care:</label>
+      <input type="text" formControlName="care" placeholder="care" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.care.errors }">
+      <div *ngIf="submitted && f.care.errors">
+        <div *ngIf="f.care.errors.required">care is required</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>description:</label>
+      <input type="text" formControlName="description" placeholder="description" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.description.errors }">
+      <div *ngIf="submitted && f.description.errors">
+        <div *ngIf="f.description.errors.required">description is required</div>
+      </div>
+    </div>
+
+    <button type="submit" class="background-primary text-floral-white btn  ">Save</button>
+  </form>
+</div>
+
+
+
+
+
+<h2>Edit Form </h2>
+<!-- 
+<div class="col-md-3">
+    <h2 class="text-center">Add Product</h2>
+    <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+  
+      <div class="form-group">
+        <label>name:</label>
+        <input type="text" formControlName="name" placeholder="name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.name.errors }">
+        <div *ngIf="submitted && f.name.errors">
+          <div *ngIf="f.name.errors.required">name is required</div>
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label>category:</label>
+        <input type="text" formControlName="category" placeholder="category" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.category.errors }">
+        <div *ngIf="submitted && f.category.errors">
+          <div *ngIf="f.category.errors.required">category is required</div>
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label>tag:</label>
+        <input type="text" formControlName="tag" placeholder="tag" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.tag.errors }">
+        <div *ngIf="submitted && f.tag.errors">
+          <div *ngIf="f.tag.errors.required">tag is required</div>
+        </div>
+      </div>
+  
+  
+      <div class="form-group">
+        <label>qty:</label>
+        <input type="text" formControlName="qty" placeholder="qty" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.qty.errors }">
+        <div *ngIf="submitted && f.qty.errors">
+          <div *ngIf="f.qty.errors.required">qty is required</div>
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label>price:</label>
+        <input type="text" formControlName="price" placeholder="price" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.price.errors }">
+        <div *ngIf="submitted && f.price.errors">
+          <div *ngIf="f.price.errors.required">price is required</div>
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label>size:</label>
+        <input type="text" formControlName="size" placeholder="size" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.size.errors }">
+        <div *ngIf="submitted && f.size.errors">
+          <div *ngIf="f.size.errors.required">size is required</div>
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label>image:</label>
+        <input type="text" formControlName="image" placeholder="image" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.image.errors }">
+        <div *ngIf="submitted && f.image.errors">
+          <div *ngIf="f.image.errors.required">image is required</div>
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label>outofstock:</label>
+        <input type="text" formControlName="outofstock" placeholder="outofstock" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.outofstock.errors }">
+        <div *ngIf="submitted && f.outofstock.errors">
+          <div *ngIf="f.outofstock.errors.required">outofstock is required</div>
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label>note:</label>
+        <input type="text" formControlName="note" placeholder="note" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.note.errors }">
+        <div *ngIf="submitted && f.note.errors">
+          <div *ngIf="f.note.errors.required">note is required</div>
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label>material:</label>
+        <input type="text" formControlName="material" placeholder="material" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.material.errors }">
+        <div *ngIf="submitted && f.material.errors">
+          <div *ngIf="f.material.errors.required">material is required</div>
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label>care:</label>
+        <input type="text" formControlName="care" placeholder="care" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.care.errors }">
+        <div *ngIf="submitted && f.care.errors">
+          <div *ngIf="f.care.errors.required">care is required</div>
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label>description:</label>
+        <input type="text" formControlName="description" placeholder="description" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.description.errors }">
+        <div *ngIf="submitted && f.description.errors">
+          <div *ngIf="f.description.errors.required">description is required</div>
+        </div>
+      </div>
+  
+      <button type="submit" class="background-primary text-floral-white btn  ">Save</button>
+    </form>
+  </div>
+
+ -->
+  <div class="col-md-3">
+      <h2 class="text-center">Edit Product</h2>
+      <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label>Title:</label>
+          <input type="text" formControlName="title" placeholder="Title" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.title.errors }">
+          <div *ngIf="submitted && f.title.errors">
+            <div *ngIf="f.title.errors.required">Title is required</div>
+          </div>
+        </div>
+    
+        <div class="form-group">
+          <label>Description:</label>
+          <input type="text" formControlName="description" placeholder="Description" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.description.errors }">
+          <div *ngIf="submitted && f.description.errors">
+            <div *ngIf="f.description.errors.required">Description is required</div>
+          </div>
+        </div>
+    
+        <div class="form-group">
+          <label>Price ($):</label>
+          <input type="text" formControlName="price" placeholder="Price" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.price.errors }">
+          <div *ngIf="submitted && f.price.errors">
+            <div *ngIf="f.price.errors.required">Price is required</div>
+          </div>
+        </div>
+    
+        <div class="form-group">
+            <label>Company:</label>
+            <input type="text" formControlName="company" placeholder="Company" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.company.errors }">
+            <div *ngIf="submitted && f.company.errors">
+              <div *ngIf="f.company.errors.required">Company is required</div>
+            </div>
+        </div>
+    
+        <button type="submit"  class="btn btn-info">Update</button>
+      </form>
+    </div>
+    
+    
+
+  
+  <br>
+  <br>
+  <br>
+<h2>Added Products</h2>
+<div class="table-responsive table-container">
+  <table class="table table-dark table-hover table-striped">
+    <thead class="thead-light">
+      <tr>
+        <th>ID</th>
+        <th>Featured</th>
+        <th>Name</th>
+        <th>category</th>
+        <th>tag</th>
+        <th>qty</th>
+        <th>price</th>
+        <th>size</th>
+        <th>image</th>
+        <th>out of stock</th>
+        <th>note</th>
+        <th>material</th>
+        <th>care</th>
+        <th>description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products">
+        <td>{{product.id}}</td>
+        <td>{{product.featured}}</td>
+        <td>{{product.name}}</td>
+        <td>{{product.category}}</td>
+        <td>{{product.tag}}</td>
+        <td>{{product.qty}}</td>
+        <td>{{product.price}}</td>
+        <td>{{product.size}}</td>
+        <td><img height="50px" src="{{BaseURL + product.image}}" alt={{product.name}}></td>
+        <td>{{product.outofstock}}</td>
+        <td>{{product.note}}</td>
+        <td>{{product.material}}</td>
+        <td>{{product.care}}</td>
+        <td>{{product.description}}</td>
+
+        <td>
+          <button (click)="deleteProduct(product)" class="btn btn-info"> Delete</button>
+          <button (click)="updateProduct(product)" style="margin-left: 20px;" class="btn btn-info"> Edit</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>

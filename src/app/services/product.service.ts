@@ -14,7 +14,9 @@ export class ProductService {
 
   constructor(
     private http: HttpClient,
-    private processHTTPMsgService: ProcessHTTPMsgService) { }
+    private processHTTPMsgService: ProcessHTTPMsgService) {
+    //  alert('ad');
+  }
 
   getProducts(): Observable<Product[]> {
     return this.http.get<Product[]>(baseURL + 'products')
@@ -48,4 +50,20 @@ export class ProductService {
     return this.http.put<Product>(baseURL + 'products/' + product.id, product, httpOptions)
       .pipe(catchError(this.processHTTPMsgService.handleError));
   }
+
+  addProduct(product: Product) {
+    console.log('Adding Product !!');
+    return this.http.post(baseURL + 'products', product);
+  }
+
+  updateProduct(product: Product) {
+    alert('Hello Mr. Edit');
+    return this.http.post(Product + 'products' + '/' + product.id, product);
+    //return this.http.put(Product + 'products' + '/' + product.id, product);
+  }
+
+  deleteProduct(id: string) {
+    return this.http.delete(baseURL + 'products' + '/' + id);
+  }
+
 }

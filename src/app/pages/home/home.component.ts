@@ -22,8 +22,9 @@ import { flyInOut, expand } from './../../animations/app.animations';
   styleUrls: ['./home.component.scss'],
   host: {
     '[@flyInOut]': 'true',
-    'style': 'display:block'
+    'style': 'display:block',
   },
+
   animations: [
     flyInOut(),
     expand()
@@ -81,6 +82,12 @@ export class HomeComponent implements OnInit {
         (banner) => this.banner = banner,
         errMess => this.errMess = <any>errMess
       );
+
+
   }
 
+  getId(event) {
+    const target = event.currentTarget.id;
+    console.log('target - ' + target);
+  }
 }
