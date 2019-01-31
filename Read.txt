@@ -3,3 +3,12 @@ Shopping Cart
 - Product-list
   - Product Item
 - Cart
+
+
+4200 is angular server 
+
+
+search node command 
+> go to current directory 
+> node server 
+> Port will run at 4003 

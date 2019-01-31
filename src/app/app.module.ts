@@ -77,6 +77,7 @@ import { CheckoutComponent } from './pages/checkout/checkout.component';
 
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireAuthModule } from "@angular/fire/auth";
 
 import { EmployeesComponent } from './employees/employees.component';
 import { EmployeeComponent } from './employees/employee/employee.component';
@@ -134,6 +135,7 @@ import { EmployeeService } from './shared/employee.service';
     HttpModule,
     AngularFireModule.initializeApp(environment.firebaseconfig),
     AngularFirestoreModule,
+    AngularFireAuthModule,
     MDBBootstrapModule.forRoot(),
     ToastrModule.forRoot()
   ],

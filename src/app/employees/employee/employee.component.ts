@@ -12,10 +12,10 @@ import { ToastrService } from 'ngx-toastr';
   templateUrl: './employee.component.html',
   styleUrls: ['./employee.component.scss']
 })
-export class EmployeeComponent implements OnInit {
 
+export class EmployeeComponent implements OnInit {
   constructor(
-    public service: EmployeeService,
+    private service: EmployeeService,
     private firestore: AngularFirestore,
     private toastr: ToastrService
   ) { }
@@ -23,6 +23,7 @@ export class EmployeeComponent implements OnInit {
   ngOnInit() {
     this.resetForm();
   }
+
   resetForm(form?: NgForm) {
     if (form != null)
       form.resetForm();
@@ -33,18 +34,21 @@ export class EmployeeComponent implements OnInit {
       empCode: '',
       mobile: ''
     }
-
   }
+
   onSubmit(form: NgForm) {
     let data = Object.assign({}, form.value);
     console.log(data);
     delete data.id;
-    if (form.value.id == null)
+    if (form.value.id == null) {
+      alert('hi');
       this.firestore.collection('employees').add(data);
-    else
-      this.firestore.doc('employees/' + form.value.id).update(data)
+    }
+    else { alert('hi 2');
+      this.firestore.doc('employees/' + form.value.id).update(data);
+    }
     this.resetForm(form);
     this.toastr.success('Submitted successfully !', 'EMP Register');
-
   }
+
 }

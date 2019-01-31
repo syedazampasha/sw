@@ -1,7 +1,7 @@
-import { AngularFirestore } from '@angular/fire/firestore';
 import { Component, OnInit } from '@angular/core';
 import { EmployeeService } from '../../shared/employee.service';
 import { Employee } from '../../shared/employee.model';
+import { AngularFirestore } from '@angular/fire/firestore';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
@@ -9,13 +9,14 @@ import { ToastrService } from 'ngx-toastr';
   templateUrl: './employee-list.component.html',
   styleUrls: ['./employee-list.component.scss']
 })
+
 export class EmployeeListComponent implements OnInit {
 
   list: Employee[];
   constructor(
     private service: EmployeeService,
     private firestore: AngularFirestore,
-    private toastr : ToastrService
+    private toastr: ToastrService
   ) { }
 
   ngOnInit() {
@@ -28,9 +29,11 @@ export class EmployeeListComponent implements OnInit {
       })
     })
   }
+
   OnEdit(emp: Employee) {
     this.service.formData = Object.assign({}, emp);
   }
+  
   onDelete(id: string) {
     if (confirm('Are you sure to delete this record ?')) {
       this.firestore.doc('employees/' + id).delete();
