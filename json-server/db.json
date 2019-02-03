@@ -1,0 +1,234 @@
+{
+  "products": [
+    {
+      "id": "0",
+      "featured": true,
+      "name": "Pantaloons Blue Shirt",
+      "code": "sw-000",
+      "category": "shirts",
+      "tag": "shirts",
+      "qty": "5",
+      "price": "800",
+      "size": "S, M, L, XL, XXL",
+      "image": "images/products/shirts/S-01.jpg",
+      "images": [
+        {
+          "imagesList": "images/products/shirts/S-01.jpg"
+        }
+      ],
+      "outofstock": "No",
+      "note": "Hand Wash",
+      "material": "Cotton",
+      "color": "",
+      "care": "Care Instructions: Wash Before You Use,Do Not Dry Clean,Do Not Iron on Print,Do Not Bleach,Wash Below 35 Degree Celsius,Use Mild Detergents Only.",
+      "description": "Mens casual shirt featuring band collar, full sleeves and a slim fit. It is crafted from fine cotton.",
+      "fitType": "Regular Fit",
+      "sleeves": "Sleeveless",
+      "unique": "Fashionable Trendy Sleeveless TShirt has pocket inside to hold your mobile phone and wire loops for Headset wire. Best for Jogging, Sports and Gym (Mobile won't fall off since your mobile is inside the jacket)",
+      "quality": "All garments are subjected to the following tests Fabric dimensional stability test and print quality inspection for colours and wash fastness.-",
+      "comments": [
+        {
+          "rating": 5,
+          "comment": "Imagine all the eatables, living in conFusion!",
+          "author": "John Lemon",
+          "date": "2012-10-16T17:57:28.556094Z"
+        }
+      ]
+    },
+    {
+      "id": "1",
+      "featured": true,
+      "name": "Pantaloons Blue Shirt",
+      "code": "sw-000",
+      "category": "shirts",
+      "tag": "shirts",
+      "qty": "5",
+      "price": "800",
+      "size": "S, M, L, XL, XXL",
+      "image": "images/products/shirts/S-02.jpg",
+      "images": [
+        {
+          "imagesList": "images/products/shirts/S-02.jpg"
+        }
+      ],
+      "outofstock": "No",
+      "note": "Hand Wash",
+      "material": "Cotton",
+      "color": "",
+      "care": "Care Instructions: Wash Before You Use,Do Not Dry Clean,Do Not Iron on Print,Do Not Bleach,Wash Below 35 Degree Celsius,Use Mild Detergents Only.",
+      "description": "Mens casual shirt featuring band collar, full sleeves and a slim fit. It is crafted from fine cotton.",
+      "fitType": "Regular Fit",
+      "sleeves": "Sleeveless",
+      "unique": "Fashionable Trendy Sleeveless TShirt has pocket inside to hold your mobile phone and wire loops for Headset wire. Best for Jogging, Sports and Gym (Mobile won't fall off since your mobile is inside the jacket)",
+      "quality": "All garments are subjected to the following tests Fabric dimensional stability test and print quality inspection for colours and wash fastness.-",
+      "comments": [
+        {
+          "rating": 5,
+          "comment": "Imagine all the eatables, living in conFusion!",
+          "author": "John Lemon",
+          "date": "2012-10-16T17:57:28.556094Z"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "featured": true,
+      "name": "Pantaloons Blue Shirt",
+      "code": "sw-000",
+      "category": "shirts",
+      "tag": "shirts",
+      "qty": "5",
+      "price": "800",
+      "size": "S, M, L, XL, XXL",
+      "image": "images/products/shirts/S-03.jpg",
+      "images": [
+        {
+          "imagesList": "images/products/shirts/S-03.jpg"
+        }
+      ],
+      "outofstock": "No",
+      "note": "Hand Wash",
+      "material": "Cotton",
+      "color": "",
+      "care": "Care Instructions: Wash Before You Use,Do Not Dry Clean,Do Not Iron on Print,Do Not Bleach,Wash Below 35 Degree Celsius,Use Mild Detergents Only.",
+      "description": "Mens casual shirt featuring band collar, full sleeves and a slim fit. It is crafted from fine cotton.",
+      "fitType": "Regular Fit",
+      "sleeves": "Sleeveless",
+      "unique": "Fashionable Trendy Sleeveless TShirt has pocket inside to hold your mobile phone and wire loops for Headset wire. Best for Jogging, Sports and Gym (Mobile won't fall off since your mobile is inside the jacket)",
+      "quality": "All garments are subjected to the following tests Fabric dimensional stability test and print quality inspection for colours and wash fastness.-",
+      "comments": [
+        {
+          "rating": 5,
+          "comment": "Imagine all the eatables, living in conFusion!",
+          "author": "John Lemon",
+          "date": "2012-10-16T17:57:28.556094Z"
+        }
+      ]
+    }
+  ],
+  "promotions": [
+    {
+      "id": "0",
+      "name": "Promotions 1",
+      "image": "images/products/promotions/PRO-01.jpg",
+      "featured": true,
+      "label": "New",
+      "price": "19.99",
+      "description": "Featuring mouthwatering combinations with a choice of five different salads, six enticing appetizers, six main entrees and five choicest desserts. Free flowing bubbly and soft drinks. All for just $19.99 per person "
+    },
+    {
+      "id": "1",
+      "name": "Promotions 2",
+      "image": "images/products/promotions/PRO-02.jpg",
+      "featured": true,
+      "label": "New",
+      "price": "19.99",
+      "description": "Featuring mouthwatering combinations with a choice of five different salads, six enticing appetizers, six main entrees and five choicest desserts. Free flowing bubbly and soft drinks. All for just $19.99 per person "
+    },
+    {
+      "id": "2",
+      "name": "Promotions 3",
+      "image": "images/products/promotions/PRO-03.jpg",
+      "featured": true,
+      "label": "New",
+      "price": "19.99",
+      "description": "Featuring mouthwatering combinations with a choice of five different salads, six enticing appetizers, six main entrees and five choicest desserts. Free flowing bubbly and soft drinks. All for just $19.99 per person "
+    }
+  ],
+  "leaders": [
+    {
+      "id": "0",
+      "name": "11 Peter Pan",
+      "image": "images/leaders/LEAD-01.png",
+      "designation": "Chief Epicurious Officer",
+      "featured": false,
+      "abbr": "CEO",
+      "description": "Our CEO, Peter, credits his hardworking East Asian immigrant parents who undertook the arduous journey to the shores of America with the intention of giving their children the best future. His mother's wizardy in the kitchen whipping up the tastiest dishes with whatever is available inexpensively at the supermarket, was his first inspiration to create the fusion cuisines for which The Frying Pan became well known. He brings his zeal for fusion cuisines to this restaurant, pioneering cross-cultural culinary connections."
+    },
+    {
+      "id": "1",
+      "name": "Dhanasekaran Witherspoon",
+      "image": "images/leaders/LEAD-01.png",
+      "designation": "Chief Food Officer",
+      "featured": false,
+      "abbr": "CFO",
+      "description": "Our CFO, Danny, as he is affectionately referred to by his colleagues, comes from a long established family tradition in farming and produce. His experiences growing up on a farm in the Australian outback gave him great appreciation for varieties of food sources. As he puts it in his own words, Everything that runs, wins, and everything that stays, pays!"
+    },
+    {
+      "id": "2",
+      "name": "Agumbe Tang",
+      "image": "images/leaders/LEAD-01.png",
+      "designation": "Chief Taste Officer",
+      "featured": false,
+      "abbr": "CTO",
+      "description": "Blessed with the most discerning gustatory sense, Agumbe, our CFO, personally ensures that every dish that we serve meets his exacting tastes. Our chefs dread the tongue lashing that ensues if their dish does not meet his exacting standards. He lives by his motto, You click only if you survive my lick."
+    },
+    {
+      "id": "3",
+      "name": "Alberto Somayya 12",
+      "image": "images/leaders/LEAD-01.png",
+      "designation": "Executive Chef",
+      "featured": true,
+      "abbr": "EC",
+      "description": "Award winning three-star Michelin chef with wide International experience having worked closely with whos-who in the culinary world, he specializes in creating mouthwatering Indo-Italian fusion experiences. "
+    }
+  ],
+  "banners": [
+    {
+      "id": "0",
+      "name": "Banner 01",
+      "image": "images/banner/banner-01.jpg",
+      "featured": true,
+      "category": "",
+      "description": "Dummy Descrip"
+    },
+    {
+      "id": "1",
+      "name": "Banner 02",
+      "image": "images/banner/banner-05.jpg",
+      "featured": true,
+      "category": "",
+      "description": "Dummy Descrip"
+    },
+    {
+      "id": "0",
+      "name": "Banner 03",
+      "image": "images/banner/banner-06.jpg",
+      "featured": true,
+      "category": "",
+      "description": "Dummy Descrip"
+    }
+  ],
+  "feedback": [
+    {
+      "firstname": "syed",
+      "lastname": "azampasha",
+      "telnum": "9880031436",
+      "email": "mailtosyedazam@gmail.com",
+      "agree": true,
+      "contacttype": "None",
+      "message": "sadadad",
+      "id": 1
+    },
+    {
+      "firstname": "syed",
+      "lastname": "azampasha",
+      "telnum": "9880031436",
+      "email": "mailtosyedazam@gmail.com",
+      "agree": true,
+      "contacttype": "Tel",
+      "message": "fsddfdgsdgsg",
+      "id": 2
+    },
+    {
+      "firstname": "Syed Azam ",
+      "lastname": "Pasha",
+      "telnum": "9880031436",
+      "email": "syed.azampasha@mindtree.com",
+      "agree": true,
+      "contacttype": "Tel",
+      "message": "Thanks for your mail !!",
+      "id": 3
+    }
+  ]
+}
